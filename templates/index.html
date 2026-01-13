@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Competitor Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        img {
+            max-height: 40px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            padding: 0.5rem 1rem;
+            transition: background 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Split Layout */
+        .main-content {
+            display: flex;
+            flex: 1;
+            height: 100%;
+        }
+
+        .left-section {
+            flex: 1;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .left-section h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .left-section p {
+            font-size: 1.2rem;
+        }
+
+        .right-section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .form-section {
+    width: 100%;
+    max-width: 400px; /* reduced from 500px */
+    background-color: #fff;
+    padding: 1.5rem;   /* reduced from 2rem */
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+        .form-section h2 {
+            margin-bottom: 1.5rem;
+            color: #007bff;
+            text-align: center;
+        }
+
+        form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;  /* reduce spacing between fields */
+}
+
+        label {
+            font-weight: 600;
+            font-size: 0.95rem; /* smaller labels */
+        }
+
+        input, select {
+    padding: 6px 10px;      /* Reduce padding inside fields */
+    font-size: 0.9rem;      /* Optional: smaller text */
+    height: 35px;           /* Directly control height */
+    border-radius: 5px;     /* Optional: keeps smooth corners */
+}
+
+        button {
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function updateSubSegment() {
+            var productSegment = document.getElementById("inp_prd_segment").value;
+            var subSegmentDiv = document.getElementById("sub_segment_div");
+            var subSegmentSelect = document.getElementById("inp_sub_segment");
+
+            subSegmentSelect.innerHTML = "";
+
+            var options = {
+                "Sensors": ["Pressure Sensors", "Temperature Sensors", "Position Sensors", "Level Sensors", "Flow Sensors", "Speed Sensors", "Proximity Sensors", "Acceleration Sensors", "Force Sensors", "Torque Sensors", "Vibration Sensors", "Gas Sensors", "Humidity Sensors", "Light Sensors", "Image Sensors", "Others"],
+                "Switches": ["Snap Action Switches", "D3 Switches", "DB Switches", "Hood Latch", "Push Button Switches", "Rocker Switches", "Toggle Switches", "Slide Switches", "Limit Switches", "Proximity Switches", "Rotary Switches", "DIP Switches", "Reed Switches", "Key Lock Switches", "Micro Switches", "Power Switches", "Waterproof Switches", "Tactile Switches", "Others"],
+                "Solenoids": ["Cold Advance Solenoid", "ESO Solenoid", "Fuel Injector", "AHI", "Others"]
+            };
+
+            if (productSegment in options) {
+                subSegmentDiv.style.display = "block";
+                options[productSegment].forEach(function (option) {
+                    var opt = document.createElement("option");
+                    opt.value = option;
+                    opt.text = option;
+                    subSegmentSelect.add(opt);
+                });
+            } else {
+                subSegmentDiv.style.display = "none";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo">
+            <span>Competitor Analysis</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard">Report View</a></li>
+        </ul>
+    </nav>
+
+    <!-- Split Main -->
+    <div class="main-content">
+        <!-- Left: Hero Text -->
+        <div class="left-section">
+            <h1>Welcome to Competitor Analysis</h1>
+            <p>Uncover insights. Benchmark performance. Outthink the competition with AI-driven strategies.</p>
+            <p>Submit-></p>
+        </div>
+
+        <!-- Right: Form -->
+        <div class="right-section">
+            <div class="form-section">
+                <form method="POST">
+
+                    <label>Organization:</label>
+                    <input type="text" name="company_name" required />
+
+                    <label>Top N Companies:</label>
+                    <input type="number" name="no_of_companies" min="5" max="10" required />
+
+                    <label>Other Companies:</label>
+                    <input type="text" name="other_companies" />
+
+                    <label>Market:</label>
+                    <select name="inp_mkt">
+                        <option value="Indian Market">Indian Market</option>
+                        <option value="Global Market">Global Market</option>
+                    </select>
+
+                    <label>Market Segment:</label>
+                    <select name="inp_mkt_segment">
+                        <option value="Automotive">Automotive</option>
+                        <option value="Industrial Solutions">Industrial Solutions</option>
+                    </select>
+
+                    <label>Product Segment:</label>
+                    <select name="inp_prd_segment" id="inp_prd_segment" onchange="updateSubSegment()">
+                        <option value="Switches">Switches</option>
+                        <option value="Sensors">Sensors</option>
+                        <option value="Solenoids">Solenoids</option>
+                        <option value="ECC">ECC</option>
+                        <option value="Electro Mechanical Assembly">Electro Mechanical Assembly</option>
+                        <option value="IOT">IOT</option>
+                        <option value="Others">Others</option>
+                    </select>
+
+                    <div id="sub_segment_div" style="display: none;">
+                        <label>Sub Segment:</label>
+                        <select name="inp_sub_segment" id="inp_sub_segment"></select>
+                    </div>
+
+                    <label>Technology:</label>
+                    <input type="text" name="inp_technology" />
+
+                    <button type="submit">Process</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Competitor Analysis. All rights reserved.</p>
+    </footer>
+</body>
+</html>
