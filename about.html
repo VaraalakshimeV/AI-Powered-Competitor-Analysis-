@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Competitor Analysis</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        img {
+            max-height: 40px;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #fff;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            padding: 0.5rem 1rem;
+            transition: background 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover,
+        .nav-links .active {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 3rem 2rem;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #007bff;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            padding: 3rem 2rem;
+            background-color: #e9ecef;
+            text-align: center;
+        }
+
+        .use-cases h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #007bff;
+        }
+
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #343a40;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Company Logo">
+            <span>Competitor Analysis</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about" class="active">About</a></li>
+            <li><a href="/features">Features</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Empowering Data-Driven Competitive Intelligence</h1>
+        <p>Unlock strategic insights and outperform your competitors using our AI-powered analytics platform.</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About the Platform</h2>
+        <p>
+            The Competitor Analysis platform integrates cutting-edge machine learning and NLP technologies 
+            to analyze competitors, extract insights from business documents, and visualize real-time trends. 
+            Designed for businesses of all sizes, our solution simplifies market research and strategic planning.
+        </p>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <h2>Core Features</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>📊 Competitor Insights</h3>
+                <p>Extract detailed competitor data with intelligent search and real-time updates.</p>
+            </div>
+            <div class="card">
+                <h3>🤖 AI Chatbot</h3>
+                <p>Engage with a smart assistant to get on-demand answers and reports.</p>
+            </div>
+            <div class="card">
+                <h3>📄 Document Analysis</h3>
+                <p>Upload PDFs to analyze market trends and extract meaningful insights.</p>
+            </div>
+            <div class="card">
+                <h3>📈 Live Dashboard</h3>
+                <p>Monitor your market space visually with real-time dashboards and KPIs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Competitor Analysis. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
