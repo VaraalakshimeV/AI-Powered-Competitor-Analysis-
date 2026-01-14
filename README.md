@@ -191,7 +191,8 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Dashboard Overview](screenshots/dashboard_full.png)
+<img width="1183" height="496" alt="image" src="https://github.com/user-attachments/assets/bb255363-32f1-40de-9448-3f2aeaa816a1" />
+
 
 </div>
 
@@ -207,7 +208,8 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Market Share Pie Chart](screenshots/market_share_pie.png)
+<img width="1182" height="571" alt="image" src="https://github.com/user-attachments/assets/aed46273-b0c9-4c20-a748-dfc24dab1396" />
+
 
 </div>
 
@@ -223,7 +225,8 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Market Share Bar Chart](screenshots/market_share_bar.png)
+<img width="1182" height="543" alt="image" src="https://github.com/user-attachments/assets/74a4733f-3957-4444-b15a-9ce102b36036" />
+
 
 </div>
 
@@ -239,7 +242,8 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Employee Count Bar Chart](screenshots/employee_comparison.png)
+<img width="1182" height="551" alt="image" src="https://github.com/user-attachments/assets/9b83a202-ffec-4ce4-9a76-9566bae26d4a" />
+
 
 </div>
 
@@ -255,7 +259,8 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Scatter Plot - Employees vs Market Share](screenshots/scatter_plot.png)
+<img width="1182" height="548" alt="image" src="https://github.com/user-attachments/assets/0ec3348d-aafd-49d6-860d-5870bcdb7133" />
+
 
 </div>
 
