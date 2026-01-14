@@ -66,7 +66,10 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![System Architecture Diagram](diagrams/system_architecture.png)
+<img width="1020" height="374" alt="image" src="https://github.com/user-attachments/assets/8120b217-b4e4-40e3-afd2-032cf0c4c1f7" />
+
+
+
 
 </div>
 
@@ -121,7 +124,8 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Use Case Diagram](diagrams/use_case_diagram.png)
+<img width="624" height="629" alt="image" src="https://github.com/user-attachments/assets/d9018af0-2ec5-431a-8029-231b080f63c0" />
+
 
 </div>
 
@@ -135,7 +139,7 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Data Flow Diagram](diagrams/detailed_flow.png)
+<img width="1005" height="265" alt="image" src="https://github.com/user-attachments/assets/e5376947-3677-4aa0-9e39-a2757e695a4a" />
 
 </div>
 
@@ -151,7 +155,8 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Home Page](screenshots/home_page.png)
+<img width="1183" height="423" alt="image" src="https://github.com/user-attachments/assets/96445ea8-8200-443a-86be-53b93665fbd1" />
+
 
 </div>
 
@@ -167,7 +172,10 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-![Input Form](screenshots/input_form.png)
+<img width="1182" height="563" alt="image" src="https://github.com/user-attachments/assets/5bdfa6a4-1dde-4da3-b7de-c9cf6df94c29" />
+<img width="1182" height="566" alt="image" src="https://github.com/user-attachments/assets/804a9395-5b72-4aeb-b80d-e4a5a4ab89e0" />
+
+
 
 </div>
 
