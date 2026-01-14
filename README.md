@@ -1,86 +1,79 @@
-🎯 AI-Powered Competitor Analysis Dashboard
-Automated Market Intelligence System | 95% Faster Research
+# 🎯 AI-Powered Competitor Analysis Dashboard
+### *Automated Market Intelligence System | 95% Faster Research*
+
 <div align="center">
-Show Image
-Show Image
-Show Image
-Show Image
-Show Image
-Developed at TVS Sensing Solutions | Real Production Deployment
+
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-2.3-green.svg)
+![AI](https://img.shields.io/badge/AI-Mistral_LLM-orange.svg)
+![Plotly](https://img.shields.io/badge/Plotly-5.0-blue.svg)
+![Status](https://img.shields.io/badge/Status-Production-success.svg)
+
+**Developed at TVS Sensing Solutions | Real Production Deployment**
+
 </div>
 
-💡 The Business Problem
-At TVS Sensing Solutions, the business development team faced a critical bottleneck: competitive analysis for market entry proposals took 2-3 weeks per report, involving:
+---
 
-❌ Manual web searches across dozens of sources
-❌ Copy-pasting data into spreadsheets
-❌ Inconsistent formatting and human errors
-❌ Outdated information by analysis completion
-❌ No scalability for multiple markets
+## 💡 The Business Problem
 
-The Challenge: Generate comprehensive, accurate competitor intelligence in minutes, not weeks.
+At **TVS Sensing Solutions**, the business development team faced a critical bottleneck: competitive analysis for market entry proposals took **2-3 weeks per report**, involving:
 
-✨ My Solution
-I designed and built an end-to-end AI-powered dashboard that automates the entire competitive intelligence workflow—from data collection to visualization and reporting.
-What It Does:
-Input: User specifies market (Indian/Global), product segment, and number of competitors
-Process: AI generates structured data → Smart cleaning → Multi-criteria ranking
-Output: Interactive dashboards + Professional Excel report in under 5 minutes
-Key Innovation:
-Engineered custom prompts for Mistral LLM that consistently deliver structured, validated competitor data with 98% first-attempt success rate—eliminating typical AI hallucination issues through context injection and JSON schema enforcement.
+- ❌ Manual web searches across dozens of sources
+- ❌ Copy-pasting data into spreadsheets
+- ❌ Inconsistent formatting and human errors
+- ❌ Outdated information by analysis completion
+- ❌ No scalability for multiple markets
 
-📊 Business Impact
-MetricBeforeAfterResultResearch Time2-3 weeks5 minutes95% reductionReports Delivered3-4/quarter12 in 3 months4x throughputData Accuracy~75%98%+23% improvementCompetitors Analyzed5-10 maxUp to 505x scalabilityTeam Capacity100% on research5% on research95% freed for strategy
-Real-World Results:
+**The Challenge:** Generate comprehensive, accurate competitor intelligence in minutes, not weeks.
 
-✅ Supported 3 market entry proposals (Tire Pressure Sensors, ADAS Components)
-✅ Identified 2 previously unknown competitors with overlapping customers
-✅ Currently in evaluation for company-wide deployment
+---
 
+## ✨ My Solution
 
-🏗️ System Architecture
-High-Level Architecture
-[INSERT SYSTEM ARCHITECTURE DIAGRAM HERE]
-Five-Layer Architecture I Built:
+I designed and built an **end-to-end AI-powered dashboard** that automates the entire competitive intelligence workflow—from data collection to visualization and reporting.
 
-Frontend Layer - Responsive UI with form validation and interactive dashboards
-Application Layer - Flask REST API with session management
-AI Processing Layer - Ollama integration with custom prompt engineering
-Data Processing Layer - Pandas pipelines with smart cleaning algorithms
-Visualization Layer - Plotly dashboards + Excel export service
+### **What It Does:**
+**Input:** User specifies market (Indian/Global), product segment, and number of competitors  
+**Process:** AI generates structured data → Smart cleaning → Multi-criteria ranking  
+**Output:** Interactive dashboards + Professional Excel report in **under 5 minutes**
 
+### **Key Innovation:**
+Engineered custom prompts for Mistral LLM that consistently deliver structured, validated competitor data with **98% first-attempt success rate**—eliminating typical AI hallucination issues through context injection and JSON schema enforcement.
 
-🏗️ System Architecture
-High-Level Architecture Diagram
-[Insert System Architecture Diagram Here]
-Technical Flow:
-User Input → Flask Router → AI Prompt Constructor → Ollama/Mistral LLM
-                                    ↓
-                        JSON Response with 20+ competitors
-                                    ↓
-              Data Validation → Cleaning → Normalization
-                              ↓
-            Multi-Criteria Ranking (Market Share × Turnover)
-                              ↓
-        Top N Selection → 6 Plotly Visualizations + Excel Export
+---
 
-🏗️ System Architecture
-Architecture Diagram
-<!-- INSERT SYSTEM ARCHITECTURE DIAGRAM HERE -->
-Five-layer architecture: Frontend → Flask API → AI Processing → Data Pipeline → Visualization
-Architecture I Built:
-Frontend Layer: Responsive UI with dynamic forms and dashboard rendering
-Application Layer: Flask REST API with routing and session management
-AI Processing: Ollama integration + Mistral LLM with engineered prompts
-Data Pipeline: Custom cleaning algorithms + Multi-criteria ranking engine
-Visualization: Plotly-powered interactive charts + Excel export
+## 📊 Business Impact
 
-🏗️ System Architecture
-High-Level Architecture Diagram
-![System Architecture Diagram]
-Complete system architecture showing data flow from user input through AI processing to final output
+| Metric | Before | After | Result |
+|--------|--------|-------|--------|
+| **Research Time** | 2-3 weeks | 5 minutes | **95% reduction** |
+| **Reports Delivered** | 3-4/quarter | 12 in 3 months | **4x throughput** |
+| **Data Accuracy** | ~75% | 98% | **+23% improvement** |
+| **Competitors Analyzed** | 5-10 max | Up to 50 | **5x scalability** |
+| **Team Capacity** | 100% on research | 5% on research | **95% freed for strategy** |
 
-Technical Architecture:
+**Real-World Results:**
+- ✅ Supported 3 market entry proposals (Tire Pressure Sensors, ADAS Components)
+- ✅ Identified 2 previously unknown competitors with overlapping customers
+- ✅ Currently in evaluation for company-wide deployment
+
+---
+
+## 🏗️ System Architecture
+
+### **High-Level Architecture**
+
+<div align="center">
+
+![System Architecture Diagram](diagrams/system_architecture.png)
+
+</div>
+
+<br>
+
+**Architecture Overview:**
+```
 ┌─────────────┐
 │   USER      │
 │   INPUT     │
@@ -96,7 +89,7 @@ Technical Architecture:
 │   AI PROMPT ENGINEERING ENGINE       │
 │  • Context injection                 │
 │  • JSON schema enforcement           │
-│  • Ranking criteria specification     │
+│  • Ranking criteria specification    │
 └──────────────────────────────────────┘
        ↓
 ┌─────────────────────────────────────┐
@@ -106,276 +99,473 @@ Technical Architecture:
 └──────────────────────────────────────┘
        ↓
 [ Data Validation & Cleaning Pipeline ]
-- Market Share: "25%" → 25.0
-- Turnover: "2.5 Billion USD" → 2500000000.0
-- Employees: "500-1000" → 750 (midpoint)
        ↓
 [Smart Ranking: Market Share × Turnover]
        ↓
-[6 Interactive Plotly Visualizations + Excel Export]
+[6 Interactive Visualizations + Excel Export]
+```
 
-🏗️ System Architecture
-Architecture Diagram
-![System Architecture]
-High-level architecture showing complete data flow from user input to final deliverables
+**Five-Layer Architecture I Built:**
 
-Architecture Overview:
-I designed a 5-layer modular architecture for scalability and maintainability:
-Layer 1: Frontend - Responsive UI with form validation and user inputs
-Layer 2: Flask Application - RESTful API routing and business logic
-Layer 3: AI Processing - Ollama integration with Mistral LLM and prompt engineering
-Layer 4: Data Pipeline - Pandas-based ETL with custom cleaning algorithms
-Layer 5: Visualization - Plotly dashboards + Excel export generation
+**Layer 1: Frontend** - Responsive UI with form validation and user inputs  
+**Layer 2: Flask Application** - RESTful API routing and business logic  
+**Layer 3: AI Processing** - Ollama integration with Mistral LLM and prompt engineering  
+**Layer 4: Data Pipeline** - Pandas-based ETL with custom cleaning algorithms  
+**Layer 5: Visualization** - Plotly dashboards + Excel export generation
 
-🏗️ System Architecture
-Architecture Diagram
-![System Architecture Diagram]
-Insert: system_architecture.png - Shows 5-layer architecture from frontend to AI processing
+---
 
-How It Works:
-User Input → Flask API → Prompt Constructor → Ollama/Mistral LLM
-                                    ↓
-              JSON Response → Validation & Parsing
-                              ↓
-                  Data Cleaning & Normalization
-                          ↓
-              Multi-Criteria Ranking Algorithm
-                          ↓
-            6 Interactive Visualizations + Excel Export
-Pipeline Breakdown:
-1️⃣ Input Layer - User-friendly form for market/product selection
-2️⃣ AI Processing - Engineered prompts generate structured JSON data
-3️⃣ Data Intelligence - Custom algorithms normalize 15+ data formats
-4️⃣ Smart Ranking - Multi-criteria sorting (Market Share × Turnover)
-5️⃣ Visualization - 6 interactive Plotly dashboards
-6️⃣ Export - Professional Excel reports with formatting
+## 🔄 System Workflow
 
-🏗️ System Architecture
-High-Level Architecture
-![System Architecture Diagram]
-<!-- Insert system_architecture.png here -->
-Architecture Overview:
+### **Use Case Diagram**
 
-Frontend: Responsive Flask templates with Bootstrap UI
-Application Layer: RESTful API with intelligent routing
-AI Engine: Ollama + Mistral LLM with custom prompt engineering
-Data Pipeline: Pandas-based ETL with normalization algorithms
-Visualization: Plotly Express interactive dashboards
-Export: XlsxWriter for professional Excel reports
+<div align="center">
 
+![Use Case Diagram](diagrams/use_case_diagram.png)
 
-🔄 System Workflow
-Use Case Diagram
-![Use Case Diagram]
-Complete system capabilities and user interactions
+</div>
 
-Detailed Data Flow
-![Data Flow Diagram]
-End-to-end processing pipeline from input to output
+<br>
 
-🎬 Application Showcase
-Home Page
-![Home Page]
-Professional landing interface with clear navigation and project overview
+*Complete system capabilities and user interactions*
 
-Input Form
-![Input Form]
-Intelligent query builder with market selection, product segments, and filters
+<br><br>
 
-Analytics Dashboard
-![Dashboard Overview]
-Comprehensive analytics with 6 interactive visualizations
+### **Detailed Data Flow**
 
-Market Share Distribution
-![Market Share Pie Chart]
-Competitive landscape visualization showing market concentration
+<div align="center">
 
-Market Share Comparison
-![Market Share Bar Chart]
-Side-by-side comparison of competitor market positions
+![Data Flow Diagram](diagrams/detailed_flow.png)
 
-Employee Count Analysis
-![Employee Count Bar Chart]
-Organizational scale comparison across competitors
+</div>
 
-Efficiency Matrix
-![Scatter Plot - Employees vs Market Share]
-Identifies high-performing companies with strong market share despite smaller teams
+<br>
 
-Revenue Pattern Analysis
-![Turnover Histogram]
-Distribution showing industry revenue concentration
+*End-to-end processing pipeline from input to output*
 
-Customer Intelligence
-![Top Customers Bar Chart]
-Shared customer analysis revealing sales opportunities
+---
 
-Strategic Positioning
-![Strengths Analysis]
-Aggregated competitive advantages across industry
-![Weaknesses Analysis]
-Common vulnerabilities and market gaps
+## 🎬 Application Showcase
 
-Professional Excel Export
-![Excel Report]
-Executive-ready report with formatted data and all 12 key metrics
+### **Home Page**
 
-AI Research Assistant
-![Custom Prompt Interface]
-Flexible interface for ad-hoc market research queries
+<div align="center">
 
-⚙️ Technical Architecture
-Core Components I Built:
-1. AI Integration Layer
+![Home Page](screenshots/home_page.png)
 
-Ollama API integration with error handling
-Custom prompt engineering for structured outputs
-JSON validation and Markdown cleaning
-3-retry logic with exponential backoff
+</div>
 
-2. Data Processing Pipeline
+<br>
 
-Multi-format parser (percentages, currencies, ranges)
-Automated data normalization algorithms
-Employee range extraction (e.g., "500-1000" → 750)
-Currency converter (Billion/Million/USD/Euros → numeric)
+*Professional landing interface with clear navigation and project overview*
 
-3. Intelligent Ranking Engine
+<br><br>
 
-Dual-criteria sorting (Market Share × Turnover)
-Duplicate detection and removal
-Data completeness validation
-Top N selection with configurable threshold
+---
 
-4. Visualization Module
+### **Input Form**
 
-6 distinct Plotly chart generators
-Statistical summary calculations
-Interactive tooltip implementation
-Responsive dashboard layout
+<div align="center">
 
-5. Export Service
+![Input Form](screenshots/input_form.png)
 
-XlsxWriter integration for Excel generation
-Professional formatting (headers, alignment, sizing)
-In-memory file streaming
-Browser download handling
+</div>
 
+<br>
 
-🛠️ Technology Stack
-LayerTechnologyPurposeBackendFlask 2.3RESTful API, routing, template renderingAI/MLOllama + MistralLLM integration, structured data generationData ProcessingPandas 2.0ETL pipeline, DataFrame manipulationVisualizationPlotly Express 5.0Interactive charts, statistical plotsExportXlsxWriterProfessional Excel report generationFrontendHTML/CSS/BootstrapResponsive UI, form validation
+*Intelligent query builder with market selection, product segments, and filters*
 
-🎯 Key Features
-What Makes This System Powerful:
-✅ Multi-Market Intelligence - Seamlessly switch between Indian and Global market analysis
-✅ Smart AI Prompting - Engineered prompts with 98% success rate vs 40% baseline
-✅ Automated Data Cleaning - Handles 15+ format variations without manual intervention
-✅ Dual-Criteria Ranking - Sophisticated algorithm weighing Market Share and Turnover
-✅ 6 Interactive Dashboards - Each visualization answers specific strategic questions
-✅ One-Click Excel Export - Professional reports ready for executive presentations
-✅ Custom AI Assistant - Flexible research interface for ad-hoc queries
-✅ Customer Overlap Detection - Identifies shared clients for sales intelligence
+<br><br>
 
-💼 Real-World Impact
-Production Deployment Results:
-📈 Efficiency Gain: 95% time reduction (2-3 weeks → 5 minutes per report)
-📊 Output Increase: 4x throughput (12 reports in 3 months vs 3-4 quarterly)
-🎯 Quality Improvement: 98% accuracy vs 75% with manual research
-💡 Business Value: Supported 3 major market entry proposals (Tire Pressure Sensors, ADAS Components, Fleet Management)
-🔍 Strategic Insights: Identified 2 previously unknown competitors with overlapping customer bases
-⚡ Team Enablement: Freed business development team from data collection to focus on strategy
+---
 
-💻 Technical Skills Demonstrated
-AI/ML Engineering:
+### **Analytics Dashboard**
 
-Large Language Model integration and optimization
-Prompt engineering for reliable structured outputs
-Error handling for non-deterministic AI systems
-JSON schema validation and data quality assurance
+<div align="center">
 
-Full-Stack Development:
+![Dashboard Overview](screenshots/dashboard_full.png)
 
-Flask REST API architecture design
-Dynamic template rendering with Jinja2
-Form handling and input validation
-File upload/download streaming
+</div>
 
-Data Engineering:
+<br>
 
-ETL pipeline development
-Complex data cleaning algorithms
-Multi-format parsing and normalization
-Statistical aggregation and analysis
+*Comprehensive analytics with 6 interactive visualizations*
 
-Data Visualization:
+<br><br>
 
-Business intelligence dashboard design
-Interactive chart implementation
-Statistical visualization best practices
-User experience optimization
+---
 
-Software Engineering:
+### **Market Share Distribution**
 
-Modular, maintainable code architecture
-Error handling and edge case management
-Performance optimization for large datasets
-Production deployment and testing
+<div align="center">
 
+![Market Share Pie Chart](screenshots/market_share_pie.png)
 
-🚀 Development Process
-How I Built This:
-1. Problem Discovery - Conducted stakeholder interviews with BD team to understand pain points
-2. Solution Design - Architected five-layer system from scratch (Frontend → AI → Data → Viz → Export)
-3. AI Integration - Experimented with prompt engineering to achieve 98% reliability
-4. Data Pipeline - Built custom parsers handling real-world data messiness
-5. Visualization - Designed 6 dashboards answering specific business questions
-6. Testing & Iteration - Refined based on user feedback across 12 production reports
-7. Deployment - Currently in production use at TVS Sensing Solutions
+</div>
 
-🌟 What This Project Proves
-Why Recruiters Should Care:
-✅ Production Experience - Real deployment, not just academic project
-✅ Independent Execution - Built entire system solo with zero supervision
-✅ Business Impact Focus - Delivered measurable ROI (95% efficiency gain)
-✅ Full-Stack Capability - Owned everything from backend APIs to frontend UX
-✅ AI Expertise - Practical LLM integration solving real problems
-✅ Problem-Solving Skills - Overcame AI unpredictability through engineering
+<br>
 
-🔮 Future Enhancements
-Phase 1: PostgreSQL integration for historical trend analysis
-Phase 2: Automated scheduling with email alerts on competitor changes
-Phase 3: Web scraping + sentiment analysis for real-time intelligence
-Phase 4: Predictive analytics using ARIMA/Prophet for market share forecasting
+*Competitive landscape visualization showing market concentration*
 
-🤝 Let's Connect
-I'm a Data Analytics Engineering graduate student at Northeastern University seeking co-op/full-time Data Analyst or Data Scientist roles.
+<br><br>
+
+---
+
+### **Market Share Comparison**
+
+<div align="center">
+
+![Market Share Bar Chart](screenshots/market_share_bar.png)
+
+</div>
+
+<br>
+
+*Side-by-side comparison of competitor market positions*
+
+<br><br>
+
+---
+
+### **Employee Count Analysis**
+
+<div align="center">
+
+![Employee Count Bar Chart](screenshots/employee_comparison.png)
+
+</div>
+
+<br>
+
+*Organizational scale comparison across competitors*
+
+<br><br>
+
+---
+
+### **Efficiency Matrix**
+
+<div align="center">
+
+![Scatter Plot - Employees vs Market Share](screenshots/scatter_plot.png)
+
+</div>
+
+<br>
+
+*Identifies high-performing companies with strong market share despite smaller teams*
+
+<br><br>
+
+---
+
+### **Revenue Pattern Analysis**
+
+<div align="center">
+
+![Turnover Histogram](screenshots/turnover_histogram.png)
+
+</div>
+
+<br>
+
+*Distribution showing industry revenue concentration*
+
+<br><br>
+
+---
+
+### **Customer Intelligence**
+
+<div align="center">
+
+![Top Customers Bar Chart](screenshots/customer_overlap.png)
+
+</div>
+
+<br>
+
+*Shared customer analysis revealing sales opportunities*
+
+<br><br>
+
+---
+
+### **Strategic Positioning - Strengths**
+
+<div align="center">
+
+![Strengths Analysis](screenshots/strengths_chart.png)
+
+</div>
+
+<br>
+
+*Aggregated competitive advantages across industry*
+
+<br><br>
+
+---
+
+### **Strategic Positioning - Weaknesses**
+
+<div align="center">
+
+![Weaknesses Analysis](screenshots/weaknesses_chart.png)
+
+</div>
+
+<br>
+
+*Common vulnerabilities and market gaps*
+
+<br><br>
+
+---
+
+### **Professional Excel Export**
+
+<div align="center">
+
+![Excel Report](screenshots/excel_export.png)
+
+</div>
+
+<br>
+
+*Executive-ready report with formatted data and all 12 key metrics*
+
+<br><br>
+
+---
+
+### **AI Research Assistant**
+
+<div align="center">
+
+![Custom Prompt Interface](screenshots/custom_prompt.png)
+
+</div>
+
+<br>
+
+*Flexible interface for ad-hoc market research queries*
+
+<br><br>
+
+---
+
+## ⚙️ Technical Architecture
+
+### **Core Components I Built:**
+
+**1. AI Integration Layer**
+- Ollama API integration with error handling
+- Custom prompt engineering for structured outputs
+- JSON validation and Markdown cleaning
+- 3-retry logic with exponential backoff
+
+**2. Data Processing Pipeline**
+- Multi-format parser (percentages, currencies, ranges)
+- Automated data normalization algorithms
+- Employee range extraction (e.g., "500-1000" → 750)
+- Currency converter (Billion/Million/USD/Euros → numeric)
+
+**3. Intelligent Ranking Engine**
+- Dual-criteria sorting (Market Share × Turnover)
+- Duplicate detection and removal
+- Data completeness validation
+- Top N selection with configurable threshold
+
+**4. Visualization Module**
+- 6 distinct Plotly chart generators
+- Statistical summary calculations
+- Interactive tooltip implementation
+- Responsive dashboard layout
+
+**5. Export Service**
+- XlsxWriter integration for Excel generation
+- Professional formatting (headers, alignment, sizing)
+- In-memory file streaming
+- Browser download handling
+
+---
+
+## 🛠️ Technology Stack
+
+| Layer | Technology | Purpose |
+|-------|-----------|---------|
+| **Backend** | Flask 2.3 | RESTful API, routing, template rendering |
+| **AI/ML** | Ollama + Mistral | LLM integration, structured data generation |
+| **Data Processing** | Pandas 2.0 | ETL pipeline, DataFrame manipulation |
+| **Visualization** | Plotly Express 5.0 | Interactive charts, statistical plots |
+| **Export** | XlsxWriter | Professional Excel report generation |
+| **Frontend** | HTML/CSS/Bootstrap | Responsive UI, form validation |
+
+---
+
+## 🎯 Key Features
+
+### **What Makes This System Powerful:**
+
+✅ **Multi-Market Intelligence** - Seamlessly switch between Indian and Global market analysis
+
+✅ **Smart AI Prompting** - Engineered prompts with 98% success rate vs 40% baseline
+
+✅ **Automated Data Cleaning** - Handles 15+ format variations without manual intervention
+
+✅ **Dual-Criteria Ranking** - Sophisticated algorithm weighing Market Share and Turnover
+
+✅ **6 Interactive Dashboards** - Each visualization answers specific strategic questions
+
+✅ **One-Click Excel Export** - Professional reports ready for executive presentations
+
+✅ **Custom AI Assistant** - Flexible research interface for ad-hoc queries
+
+✅ **Customer Overlap Detection** - Identifies shared clients for sales intelligence
+
+---
+
+## 💼 Real-World Impact
+
+### **Production Deployment Results:**
+
+📈 **Efficiency Gain:** 95% time reduction (2-3 weeks → 5 minutes per report)
+
+📊 **Output Increase:** 4x throughput (12 reports in 3 months vs 3-4 quarterly)
+
+🎯 **Quality Improvement:** 98% accuracy vs 75% with manual research
+
+💡 **Business Value:** Supported 3 major market entry proposals (Tire Pressure Sensors, ADAS Components, Fleet Management)
+
+🔍 **Strategic Insights:** Identified 2 previously unknown competitors with overlapping customer bases
+
+⚡ **Team Enablement:** Freed business development team from data collection to focus on strategy
+
+---
+
+## 💻 Technical Skills Demonstrated
+
+### **AI/ML Engineering:**
+- Large Language Model integration and optimization
+- Prompt engineering for reliable structured outputs
+- Error handling for non-deterministic AI systems
+- JSON schema validation and data quality assurance
+
+### **Full-Stack Development:**
+- Flask REST API architecture design
+- Dynamic template rendering with Jinja2
+- Form handling and input validation
+- File upload/download streaming
+
+### **Data Engineering:**
+- ETL pipeline development
+- Complex data cleaning algorithms
+- Multi-format parsing and normalization
+- Statistical aggregation and analysis
+
+### **Data Visualization:**
+- Business intelligence dashboard design
+- Interactive chart implementation
+- Statistical visualization best practices
+- User experience optimization
+
+### **Software Engineering:**
+- Modular, maintainable code architecture
+- Error handling and edge case management
+- Performance optimization for large datasets
+- Production deployment and testing
+
+---
+
+## 🚀 Development Process
+
+### **How I Built This:**
+
+**1. Problem Discovery** - Conducted stakeholder interviews with BD team to understand pain points
+
+**2. Solution Design** - Architected five-layer system from scratch (Frontend → AI → Data → Viz → Export)
+
+**3. AI Integration** - Experimented with prompt engineering to achieve 98% reliability
+
+**4. Data Pipeline** - Built custom parsers handling real-world data messiness
+
+**5. Visualization** - Designed 6 dashboards answering specific business questions
+
+**6. Testing & Iteration** - Refined based on user feedback across 12 production reports
+
+**7. Deployment** - Currently in production use at TVS Sensing Solutions
+
+---
+
+## 🌟 What This Project Proves
+
+### **Why Recruiters Should Care:**
+
+✅ **Production Experience** - Real deployment, not just academic project
+
+✅ **Independent Execution** - Built entire system solo with zero supervision
+
+✅ **Business Impact Focus** - Delivered measurable ROI (95% efficiency gain)
+
+✅ **Full-Stack Capability** - Owned everything from backend APIs to frontend UX
+
+✅ **AI Expertise** - Practical LLM integration solving real problems
+
+✅ **Problem-Solving Skills** - Overcame AI unpredictability through engineering
+
+---
+
+## 🔮 Future Enhancements
+
+**Phase 1:** PostgreSQL integration for historical trend analysis
+
+**Phase 2:** Automated scheduling with email alerts on competitor changes
+
+**Phase 3:** Web scraping + sentiment analysis for real-time intelligence
+
+**Phase 4:** Predictive analytics using ARIMA/Prophet for market share forecasting
+
+---
+
+## 🤝 Let's Connect
+
+I'm a **Data Analytics Engineering graduate student at Northeastern University** seeking **co-op/full-time Data Analyst or Data Scientist roles**.
+
 This project demonstrates my ability to:
+- ✅ Build production-ready AI applications
+- ✅ Deliver measurable business value
+- ✅ Work independently across the full stack
+- ✅ Communicate technical solutions to stakeholders
 
-✅ Build production-ready AI applications
-✅ Deliver measurable business value
-✅ Work independently across the full stack
-✅ Communicate technical solutions to stakeholders
-
-Interested in discussing how I can bring similar innovation to your team?
-<div align="center">
-📧 Email: varaalakshime.l@northeastern.edu
-💼 LinkedIn: [Your LinkedIn URL]
-🐙 GitHub: [Your GitHub Profile]
-📱 Phone: [Your Phone Number]
-Available for Co-op: May 2025 - December 2025
-</div>
-
-📄 Project Context
-Developed during Data Scientist internship at TVS Sensing Solutions Private Limited (Coimbatore, India) - A leading automotive IoT and sensing solutions provider. Currently being evaluated for company-wide deployment across business units.
+**Interested in discussing how I can bring similar innovation to your team?**
 
 <div align="center">
-⭐ Built with Flask • Mistral LLM • Plotly • Pandas ⭐
-Transforming Market Research Through AI Automation
+
+📧 **Email:** varaalakshime.l@northeastern.edu  
+💼 **LinkedIn:** [Your LinkedIn URL]  
+🐙 **GitHub:** [Your GitHub Profile]  
+📱 **Phone:** [Your Phone Number]
+
+**Available for Co-op:** May 2025 - December 2025
+
 </div>
 
+---
 
+## 📄 Project Context
 
+Developed during Data Scientist internship at **TVS Sensing Solutions Private Limited** (Coimbatore, India) - A leading automotive IoT and sensing solutions provider. Currently being evaluated for company-wide deployment across business units.
 
+---
+
+<div align="center">
+
+**⭐ Built with Flask • Mistral LLM • Plotly • Pandas ⭐**
+
+*Transforming Market Research Through AI Automation*
+
+</div>
 
 <img width="1183" height="423" alt="image" src="https://github.com/user-attachments/assets/8455824d-e021-468b-ab7c-a44d62a49bab" />
 <img width="1182" height="563" alt="image" src="https://github.com/user-attachments/assets/3f8a4ec8-217d-4413-b5c6-175cf134a4db" />
