@@ -1,5 +1,5 @@
 # 🎯 AI-Powered Competitor Analysis Dashboard
-### *Automated Market Intelligence System | 95% Faster Research*
+### *Automated Market Intelligence System | 95% Faster Research* 
 
 <div align="center">
 
