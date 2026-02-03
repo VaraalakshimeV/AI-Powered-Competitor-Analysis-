@@ -1,45 +1,49 @@
-# 🎯 AI-Powered Competitor Analysis Dashboard
-### *Automated Market Intelligence System | 95% Faster Research* 
+# 🎯 AI-Powered Competitor Analysis System
+### *Customized Market Intelligence for Manufacturing | Ollama Mistral LLM Integration*
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
-![Flask](https://img.shields.io/badge/Flask-2.3-green.svg)
-![AI](https://img.shields.io/badge/AI-Mistral_LLM-orange.svg)
-![Plotly](https://img.shields.io/badge/Plotly-5.0-blue.svg)
-![Status](https://img.shields.io/badge/Status-Production-success.svg)
+![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)
+![Flask](https://img.shields.io/badge/Flask-3.0.0-green.svg)
+![AI](https://img.shields.io/badge/AI-Ollama_Mistral-orange.svg)
+![Plotly](https://img.shields.io/badge/Plotly-5.17.0-purple.svg)
+![Status](https://img.shields.io/badge/Status-Completed-success.svg)
 
-**Developed at TVS Sensing Solutions | Real Production Deployment**
+**Developed at TVS Sensing Solutions | Internship Project**
 
 </div>
 
 ---
 
+> **Note:** This is a portfolio project showcasing work completed during my Data Science internship at TVS Sensing Solutions. The repository is for demonstration purposes only.
+
+---
+
 ## 💡 The Business Problem
 
-At **TVS Sensing Solutions**, the business development team faced a critical bottleneck: competitive analysis for market entry proposals took **2-3 weeks per report**, involving:
+At **TVS Sensing Solutions**, the business development team needed competitor analysis for market positioning and strategic planning. However, existing competitor analysis tools had critical limitations:
 
-- ❌ Manual web searches across dozens of sources
-- ❌ Copy-pasting data into spreadsheets
-- ❌ Inconsistent formatting and human errors
-- ❌ Outdated information by analysis completion
-- ❌ No scalability for multiple markets
+- ❌ Generic insights provided broad industry data without product-specific focus
+- ❌ Irrelevant competitors included companies from unrelated domains
+- ❌ Manual research for gathering competitor information was time-consuming
+- ❌ No customization to filter by TVS's specific product categories
+- ❌ Unstructured outputs lacked organization for strategic decision-making
 
-**The Challenge:** Generate comprehensive, accurate competitor intelligence in minutes, not weeks.
+**The Challenge:** Build a customized system that analyzes competitors specifically relevant to TVS's sensor manufacturing portfolio with automated data generation and visualization.
 
 ---
 
 ## ✨ My Solution
 
-I designed and built an **end-to-end AI-powered dashboard** that automates the entire competitive intelligence workflow—from data collection to visualization and reporting.
+I designed and built an **AI-powered web application** that provides product-specific competitor intelligence tailored to TVS's manufacturing segments—from data collection to structured analysis and visualization.
 
 ### **What It Does:**
-**Input:** User specifies market (Indian/Global), product segment, and number of competitors  
-**Process:** AI generates structured data → Smart cleaning → Multi-criteria ranking  
-**Output:** Interactive dashboards + Professional Excel report in **under 5 minutes**
+**Input:** User specifies product type (e.g., pressure sensors), market focus (Indian/Global), and competitor count  
+**Process:** Feature Engineering → Dynamic Query Construction → Ollama Mistral LLM → Data Cleaning → Ranking Algorithm  
+**Output:** Structured competitor profiles with interactive dashboard + Excel export
 
 ### **Key Innovation:**
-Engineered custom prompts for Mistral LLM that consistently deliver structured, validated competitor data with **98% first-attempt success rate**—eliminating typical AI hallucination issues through context injection and JSON schema enforcement.
+Engineered intelligent **feature engineering and dynamic query construction** that transforms user inputs into precise AI prompts, ensuring the Ollama Mistral model generates structured, relevant competitor data. Implemented a sophisticated ranking algorithm that sorts competitors by market share and turnover to identify true market leaders.
 
 ---
 
@@ -47,16 +51,17 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 | Metric | Before | After | Result |
 |--------|--------|-------|--------|
-| **Research Time** | 2-3 weeks | 5 minutes | **95% reduction** |
-| **Reports Delivered** | 3-4/quarter | 12 in 3 months | **4x throughput** |
-| **Data Accuracy** | ~75% | 98% | **+23% improvement** |
-| **Competitors Analyzed** | 5-10 max | Up to 50 | **5x scalability** |
-| **Team Capacity** | 100% on research | 5% on research | **95% freed for strategy** |
+| **Analysis Scope** | Generic industry data | Product-specific insights | **Targeted intelligence** |
+| **Data Generation** | Manual web research | Automated AI generation | **Instant results** |
+| **Competitor Filtering** | All industries | TVS product categories only | **Relevant competitors** |
+| **Data Structure** | Unorganized notes | Structured DataFrames | **Analysis-ready** |
+| **Output Format** | Manual reports | Dashboard + Excel export | **Professional reports** |
 
 **Real-World Results:**
-- ✅ Supported 3 market entry proposals (Tire Pressure Sensors, ADAS Components)
-- ✅ Identified 2 previously unknown competitors with overlapping customers
-- ✅ Currently in evaluation for company-wide deployment
+- ✅ Successfully automated competitor data generation using Ollama Mistral LLM
+- ✅ Built product-specific filtering for TVS's sensor portfolio
+- ✅ Delivered interactive dashboard with 6+ Plotly visualizations
+- ✅ Generated structured Excel reports for business presentations
 
 ---
 
@@ -66,10 +71,7 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-<img width="1020" height="374" alt="image" src="https://github.com/user-attachments/assets/8120b217-b4e4-40e3-afd2-032cf0c4c1f7" />
-
-
-
+<img width="1020" height="374" alt="System Architecture" src="https://github.com/user-attachments/assets/8120b217-b4e4-40e3-afd2-032cf0c4c1f7" />
 
 </div>
 
@@ -77,44 +79,49 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 **Architecture Overview:**
 ```
-┌─────────────┐
-│   USER      │
-│   INPUT     │
-└──────┬──────┘
-       │
-       ▼
 ┌─────────────────┐
-│  Flask Web App  │──► Market Selection (Indian/Global)
-│                 │    Product Segments & Filters
-└─────────────────┘    Competitor Count (5-50)
-       ↓
-┌──────────────────────────────────────┐
-│   AI PROMPT ENGINEERING ENGINE       │
-│  • Context injection                 │
-│  • JSON schema enforcement           │
-│  • Ranking criteria specification    │
-└──────────────────────────────────────┘
-       ↓
-┌─────────────────────────────────────┐
-│   OLLAMA + MISTRAL LLM              │
-│   Generates structured competitor    │
-│   data with 98% accuracy             │
-└──────────────────────────────────────┘
-       ↓
-[ Data Validation & Cleaning Pipeline ]
-       ↓
-[Smart Ranking: Market Share × Turnover]
-       ↓
-[6 Interactive Visualizations + Excel Export]
+│   USER INPUT    │
+│  • Company Name │
+│  • Product Type │
+│  • Market Focus │
+└────────┬────────┘
+         │
+         ▼
+┌────────────────────────────────┐
+│   FLASK WEB APPLICATION        │
+│  • Route handling              │
+│  • Form processing             │
+└────────────────────────────────┘
+         ↓
+┌─────────────────────────────────┐
+│  FEATURE ENGINEERING            │
+│  • Product description builder  │
+│  • Sub-segment combination      │
+└─────────────────────────────────┘
+         ↓
+┌─────────────────────────────────┐
+│  OLLAMA MISTRAL LLM             │
+│  • AI-powered data generation   │
+│  • JSON-formatted responses     │
+└─────────────────────────────────┘
+         ↓
+┌─────────────────────────────────┐
+│  DATA PROCESSING PIPELINE       │
+│  • JSON parsing                 │
+│  • Data cleaning                │
+│  • Ranking algorithm            │
+└─────────────────────────────────┘
+         ↓
+[ 6+ Interactive Plotly Visualizations + Excel Export ]
 ```
 
-**Five-Layer Architecture I Built:**
+**Five-Layer Architecture:**
 
-**Layer 1: Frontend** - Responsive UI with form validation and user inputs  
-**Layer 2: Flask Application** - RESTful API routing and business logic  
-**Layer 3: AI Processing** - Ollama integration with Mistral LLM and prompt engineering  
-**Layer 4: Data Pipeline** - Pandas-based ETL with custom cleaning algorithms  
-**Layer 5: Visualization** - Plotly dashboards + Excel export generation
+**Layer 1: User Input** - Web form capturing product and market specifications  
+**Layer 2: Flask Application** - Backend processing and routing  
+**Layer 3: AI Engine** - Ollama Mistral for competitor data generation  
+**Layer 4: Data Pipeline** - Cleaning, structuring, and ranking  
+**Layer 5: Visualization** - Interactive Plotly dashboards and Excel export
 
 ---
 
@@ -124,14 +131,13 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-<img width="624" height="629" alt="image" src="https://github.com/user-attachments/assets/d9018af0-2ec5-431a-8029-231b080f63c0" />
-
+<img width="624" height="629" alt="Use Case Diagram" src="https://github.com/user-attachments/assets/d9018af0-2ec5-431a-8029-231b080f63c0" />
 
 </div>
 
 <br>
 
-*Complete system capabilities and user interactions*
+*Complete system capabilities showing user interactions and data flow*
 
 <br><br>
 
@@ -139,13 +145,13 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-<img width="1005" height="265" alt="image" src="https://github.com/user-attachments/assets/e5376947-3677-4aa0-9e39-a2757e695a4a" />
+<img width="1005" height="265" alt="Data Flow Diagram" src="https://github.com/user-attachments/assets/e5376947-3677-4aa0-9e39-a2757e695a4a" />
 
 </div>
 
 <br>
 
-*End-to-end processing pipeline from input to output*
+*End-to-end processing pipeline from input to actionable insights*
 
 ---
 
@@ -155,50 +161,61 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-<img width="1183" height="423" alt="image" src="https://github.com/user-attachments/assets/96445ea8-8200-443a-86be-53b93665fbd1" />
-
+<img width="1183" height="423" alt="Home Page" src="https://github.com/user-attachments/assets/96445ea8-8200-443a-86be-53b93665fbd1" />
 
 </div>
 
 <br>
 
-*Professional landing interface with clear navigation and project overview*
+*Landing page with navigation to analysis modules*
 
 <br><br>
 
 ---
 
-### **Input Form**
+### **Input Form - Product Selection**
 
 <div align="center">
 
-<img width="1182" height="563" alt="image" src="https://github.com/user-attachments/assets/5bdfa6a4-1dde-4da3-b7de-c9cf6df94c29" />
-<img width="1182" height="566" alt="image" src="https://github.com/user-attachments/assets/804a9395-5b72-4aeb-b80d-e4a5a4ab89e0" />
-
-
+<img width="1182" height="563" alt="Input Form 1" src="https://github.com/user-attachments/assets/5bdfa6a4-1dde-4da3-b7de-c9cf6df94c29" />
 
 </div>
 
 <br>
 
-*Intelligent query builder with market selection, product segments, and filters*
+*User specifies market type, product segment, and competitor filters*
 
 <br><br>
 
 ---
 
-### **Analytics Dashboard**
+### **Input Form - Technology Details**
 
 <div align="center">
 
-<img width="1183" height="496" alt="image" src="https://github.com/user-attachments/assets/bb255363-32f1-40de-9448-3f2aeaa816a1" />
-
+<img width="1182" height="566" alt="Input Form 2" src="https://github.com/user-attachments/assets/804a9395-5b72-4aeb-b80d-e4a5a4ab89e0" />
 
 </div>
 
 <br>
 
-*Comprehensive analytics with 6 interactive visualizations*
+*Additional filters for sub-segment and technology specifications*
+
+<br><br>
+
+---
+
+### **Analytics Dashboard Overview**
+
+<div align="center">
+
+<img width="1183" height="496" alt="Dashboard" src="https://github.com/user-attachments/assets/bb255363-32f1-40de-9448-3f2aeaa816a1" />
+
+</div>
+
+<br>
+
+*Interactive dashboard with multiple visualization types*
 
 <br><br>
 
@@ -208,14 +225,13 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-<img width="1182" height="571" alt="image" src="https://github.com/user-attachments/assets/aed46273-b0c9-4c20-a748-dfc24dab1396" />
-
+<img width="1182" height="571" alt="Market Share Pie" src="https://github.com/user-attachments/assets/aed46273-b0c9-4c20-a748-dfc24dab1396" />
 
 </div>
 
 <br>
 
-*Competitive landscape visualization showing market concentration*
+*Pie chart showing competitive landscape distribution*
 
 <br><br>
 
@@ -225,14 +241,13 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-<img width="1182" height="543" alt="image" src="https://github.com/user-attachments/assets/74a4733f-3957-4444-b15a-9ce102b36036" />
-
+<img width="1182" height="543" alt="Market Share Bar" src="https://github.com/user-attachments/assets/74a4733f-3957-4444-b15a-9ce102b36036" />
 
 </div>
 
 <br>
 
-*Side-by-side comparison of competitor market positions*
+*Bar chart comparing competitor market positions*
 
 <br><br>
 
@@ -242,8 +257,7 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 <div align="center">
 
-<img width="1182" height="551" alt="image" src="https://github.com/user-attachments/assets/9b83a202-ffec-4ce4-9a76-9566bae26d4a" />
-
+<img width="1182" height="551" alt="Employee Count" src="https://github.com/user-attachments/assets/9b83a202-ffec-4ce4-9a76-9566bae26d4a" />
 
 </div>
 
@@ -255,114 +269,49 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 ---
 
-### **Efficiency Matrix**
+### **Efficiency Matrix (Market Share vs Employees)**
 
 <div align="center">
 
-<img width="1182" height="548" alt="image" src="https://github.com/user-attachments/assets/0ec3348d-aafd-49d6-860d-5870bcdb7133" />
-
+<img width="1182" height="548" alt="Efficiency Matrix" src="https://github.com/user-attachments/assets/0ec3348d-aafd-49d6-860d-5870bcdb7133" />
 
 </div>
 
 <br>
 
-*Identifies high-performing companies with strong market share despite smaller teams*
+*Scatter plot identifying high-performing companies with optimal resource utilization*
 
 <br><br>
 
 ---
 
-### **Revenue Pattern Analysis**
+### **AI Research Assistant (ComPIBOT)**
 
 <div align="center">
 
-![Turnover Histogram](screenshots/turnover_histogram.png)
+<img width="1183" height="559" alt="Chatbot" src="https://github.com/user-attachments/assets/3e1e0e63-4eda-48d3-afa3-080e45801160" />
 
 </div>
 
 <br>
 
-*Distribution showing industry revenue concentration*
+*Conversational interface for ad-hoc competitor research queries*
 
 <br><br>
 
 ---
 
-### **Customer Intelligence**
+### **Excel Export Sample**
 
 <div align="center">
 
-![Top Customers Bar Chart](screenshots/customer_overlap.png)
+<img width="948" height="561" alt="Excel Export" src="https://github.com/user-attachments/assets/7185e81f-5af6-459d-ae45-f8f0b20cd1d0" />
 
 </div>
 
 <br>
 
-*Shared customer analysis revealing sales opportunities*
-
-<br><br>
-
----
-
-### **Strategic Positioning - Strengths**
-
-<div align="center">
-
-![Strengths Analysis](screenshots/strengths_chart.png)
-
-</div>
-
-<br>
-
-*Aggregated competitive advantages across industry*
-
-<br><br>
-
----
-
-### **Strategic Positioning - Weaknesses**
-
-<div align="center">
-
-![Weaknesses Analysis](screenshots/weaknesses_chart.png)
-
-</div>
-
-<br>
-
-*Common vulnerabilities and market gaps*
-
-<br><br>
-
----
-
-### **Professional Excel Export**
-
-<div align="center">
-
-![Excel Report](screenshots/excel_export.png)
-
-</div>
-
-<br>
-
-*Executive-ready report with formatted data and all 12 key metrics*
-
-<br><br>
-
----
-
-### **AI Research Assistant**
-
-<div align="center">
-
-![Custom Prompt Interface](screenshots/custom_prompt.png)
-
-</div>
-
-<br>
-
-*Flexible interface for ad-hoc market research queries*
+*Structured data export for business presentations and reports*
 
 <br><br>
 
@@ -372,48 +321,68 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 ### **Core Components I Built:**
 
-**1. AI Integration Layer**
-- Ollama API integration with error handling
-- Custom prompt engineering for structured outputs
-- JSON validation and Markdown cleaning
-- 3-retry logic with exponential backoff
+**1. User Input Processing Module**
+- Flask form handling for product specifications
+- Market type selection (Indian/Global)
+- Competitor count configuration
+- Dynamic field validation
 
-**2. Data Processing Pipeline**
-- Multi-format parser (percentages, currencies, ranges)
-- Automated data normalization algorithms
+**2. Feature Engineering Engine**
+- Product description builder
+- Sub-segment combination logic
+- Technology specification integration
+- Structured query formation
+
+**3. AI Integration Layer**
+- Ollama Mistral LLM integration
+- Context-aware prompt engineering
+- JSON response parsing
+- Error handling and retry logic
+
+**4. Data Processing Pipeline**
+- Market share normalization (%, Billion, Million, USD)
+- Turnover standardization across currencies
 - Employee range extraction (e.g., "500-1000" → 750)
-- Currency converter (Billion/Million/USD/Euros → numeric)
+- Missing data handling
 
-**3. Intelligent Ranking Engine**
+**5. Ranking Algorithm**
 - Dual-criteria sorting (Market Share × Turnover)
-- Duplicate detection and removal
-- Data completeness validation
-- Top N selection with configurable threshold
+- Top N competitor selection
+- Tie-breaking logic
+- Data completeness scoring
 
-**4. Visualization Module**
-- 6 distinct Plotly chart generators
-- Statistical summary calculations
-- Interactive tooltip implementation
-- Responsive dashboard layout
+**6. Visualization Module**
+- 6+ distinct Plotly chart generators
+- Market share pie charts
+- Employee count bar charts
+- Efficiency scatter plots
+- Revenue distribution histograms
+- Interactive HTML rendering
 
-**5. Export Service**
-- XlsxWriter integration for Excel generation
-- Professional formatting (headers, alignment, sizing)
-- In-memory file streaming
+**7. Export Service**
+- XlsxWriter integration
+- Structured Excel formatting
+- In-memory file generation
 - Browser download handling
+
+**8. Web Interface**
+- Flask routing and template rendering
+- Responsive Bootstrap UI
+- Real-time dashboard updates
+- Custom prompt chatbot interface
 
 ---
 
 ## 🛠️ Technology Stack
 
-| Layer | Technology | Purpose |
-|-------|-----------|---------|
-| **Backend** | Flask 2.3 | RESTful API, routing, template rendering |
-| **AI/ML** | Ollama + Mistral | LLM integration, structured data generation |
-| **Data Processing** | Pandas 2.0 | ETL pipeline, DataFrame manipulation |
-| **Visualization** | Plotly Express 5.0 | Interactive charts, statistical plots |
+| Category | Technologies | Purpose |
+|----------|-------------|---------|
+| **Backend** | Python 3.11, Flask 3.0.0 | Web framework, API routing, business logic |
+| **AI/NLP** | Ollama 0.6.2, Mistral LLM | Competitor insight generation, structured output |
+| **Data Processing** | Pandas 2.1.1, NumPy | Data manipulation, cleaning, ranking algorithms |
+| **Visualization** | Plotly 5.17.0 | Interactive charts and dashboards |
 | **Export** | XlsxWriter | Professional Excel report generation |
-| **Frontend** | HTML/CSS/Bootstrap | Responsive UI, form validation |
+| **Frontend** | HTML5, CSS3, Bootstrap, JavaScript | Responsive UI, dynamic interactions |
 
 ---
 
@@ -421,73 +390,73 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 ### **What Makes This System Powerful:**
 
-✅ **Multi-Market Intelligence** - Seamlessly switch between Indian and Global market analysis
+✅ **Product-Specific Intelligence** - Filters competitors based on TVS's exact manufacturing segments
 
-✅ **Smart AI Prompting** - Engineered prompts with 98% success rate vs 40% baseline
+✅ **AI-Powered Generation** - Ollama Mistral creates structured competitor profiles on demand
 
-✅ **Automated Data Cleaning** - Handles 15+ format variations without manual intervention
+✅ **Smart Ranking Algorithm** - Dual-criteria sorting by market share and turnover
 
-✅ **Dual-Criteria Ranking** - Sophisticated algorithm weighing Market Share and Turnover
+✅ **Interactive Dashboards** - 6+ visualizations for comprehensive analysis
 
-✅ **6 Interactive Dashboards** - Each visualization answers specific strategic questions
+✅ **Excel Export** - Professional reports ready for presentations
 
-✅ **One-Click Excel Export** - Professional reports ready for executive presentations
+✅ **Customizable Filters** - Market type, product segment, sub-segment, technology
 
-✅ **Custom AI Assistant** - Flexible research interface for ad-hoc queries
+✅ **Real-Time Results** - Instant competitor intelligence generation
 
-✅ **Customer Overlap Detection** - Identifies shared clients for sales intelligence
+✅ **Chatbot Interface** - Ad-hoc research queries with conversational AI
 
 ---
 
 ## 💼 Real-World Impact
 
-### **Production Deployment Results:**
+### **Internship Deployment Results:**
 
-📈 **Efficiency Gain:** 95% time reduction (2-3 weeks → 5 minutes per report)
+📈 **Automation:** Replaced manual competitor research with AI-powered generation
 
-📊 **Output Increase:** 4x throughput (12 reports in 3 months vs 3-4 quarterly)
+📊 **Relevance:** Product-specific filtering ensures only relevant competitors
 
-🎯 **Quality Improvement:** 98% accuracy vs 75% with manual research
+🎯 **Speed:** Instant results vs hours of manual research
 
-💡 **Business Value:** Supported 3 major market entry proposals (Tire Pressure Sensors, ADAS Components, Fleet Management)
+💡 **Structure:** Organized data ready for strategic planning
 
-🔍 **Strategic Insights:** Identified 2 previously unknown competitors with overlapping customer bases
+🔍 **Completeness:** 12 key metrics per competitor (vs 3-4 with manual methods)
 
-⚡ **Team Enablement:** Freed business development team from data collection to focus on strategy
+⚡ **Scalability:** Analyze 5-50 competitors in single query
 
 ---
 
 ## 💻 Technical Skills Demonstrated
 
 ### **AI/ML Engineering:**
-- Large Language Model integration and optimization
-- Prompt engineering for reliable structured outputs
-- Error handling for non-deterministic AI systems
-- JSON schema validation and data quality assurance
+- Large Language Model (LLM) integration
+- Prompt engineering for structured outputs
+- JSON parsing and validation
+- Context-aware query construction
 
-### **Full-Stack Development:**
-- Flask REST API architecture design
-- Dynamic template rendering with Jinja2
-- Form handling and input validation
-- File upload/download streaming
+### **Backend Development:**
+- Flask web application development
+- RESTful API design
+- Dynamic form handling
+- File generation and download
 
 ### **Data Engineering:**
 - ETL pipeline development
-- Complex data cleaning algorithms
-- Multi-format parsing and normalization
-- Statistical aggregation and analysis
+- Multi-format data cleaning
+- Currency and percentage normalization
+- Ranking algorithm implementation
 
 ### **Data Visualization:**
 - Business intelligence dashboard design
-- Interactive chart implementation
-- Statistical visualization best practices
-- User experience optimization
+- Interactive Plotly charts
+- Statistical visualization
+- Export functionality
 
-### **Software Engineering:**
-- Modular, maintainable code architecture
-- Error handling and edge case management
-- Performance optimization for large datasets
-- Production deployment and testing
+### **Full-Stack Development:**
+- Frontend UI/UX design
+- Backend logic implementation
+- Database-less architecture
+- End-to-end system integration
 
 ---
 
@@ -495,49 +464,40 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 
 ### **How I Built This:**
 
-**1. Problem Discovery** - Conducted stakeholder interviews with BD team to understand pain points
+**1. Requirements Gathering** - Met with TVS business team to understand competitor analysis needs
 
-**2. Solution Design** - Architected five-layer system from scratch (Frontend → AI → Data → Viz → Export)
+**2. System Design** - Architected AI-powered solution with Ollama Mistral integration
 
-**3. AI Integration** - Experimented with prompt engineering to achieve 98% reliability
+**3. Feature Engineering** - Built intelligent query construction from user inputs
 
-**4. Data Pipeline** - Built custom parsers handling real-world data messiness
+**4. AI Integration** - Implemented LLM prompting with structured output validation
 
-**5. Visualization** - Designed 6 dashboards answering specific business questions
+**5. Data Pipeline** - Developed cleaning and ranking algorithms for multiple data formats
 
-**6. Testing & Iteration** - Refined based on user feedback across 12 production reports
+**6. Visualization** - Created 6+ interactive dashboards for analysis
 
-**7. Deployment** - Currently in production use at TVS Sensing Solutions
+**7. Testing & Validation** - Comprehensive testing with TVS team feedback
 
 ---
 
-## 🌟 What This Project Proves
+## 📊 Results & Impact
 
-### **Why Recruiters Should Care:**
-
-✅ **Production Experience** - Real deployment, not just academic project
-
-✅ **Independent Execution** - Built entire system solo with zero supervision
-
-✅ **Business Impact Focus** - Delivered measurable ROI (95% efficiency gain)
-
-✅ **Full-Stack Capability** - Owned everything from backend APIs to frontend UX
-
-✅ **AI Expertise** - Practical LLM integration solving real problems
-
-✅ **Problem-Solving Skills** - Overcame AI unpredictability through engineering
+- **Product-specific filtering** for TVS's sensor portfolio (pressure, speed, temperature, position)
+- **6+ interactive visualizations** for comprehensive competitor analysis
+- **12 key metrics** extracted per competitor (Company, HQ, Market Share, Products, etc.)
+- **Excel export functionality** for business presentations
+- **Real-time AI generation** replacing hours of manual research
 
 ---
 
 ## 🔮 Future Enhancements
 
-**Phase 1:** PostgreSQL integration for historical trend analysis
-
-**Phase 2:** Automated scheduling with email alerts on competitor changes
-
-**Phase 3:** Web scraping + sentiment analysis for real-time intelligence
-
-**Phase 4:** Predictive analytics using ARIMA/Prophet for market share forecasting
+- **Real-time web scraping:** Automated updates from competitor websites
+- **Sentiment analysis:** Analyze customer reviews and social media
+- **Predictive analytics:** Forecast competitor market share trends
+- **Multi-language support:** Process documents in multiple languages
+- **API integration:** Connect to market research databases
+- **Mobile app:** On-the-go competitor intelligence access
 
 ---
 
@@ -546,19 +506,17 @@ Engineered custom prompts for Mistral LLM that consistently deliver structured, 
 I'm a **Data Analytics Engineering graduate student at Northeastern University** seeking **co-op/full-time Data Analyst or Data Scientist roles**.
 
 This project demonstrates my ability to:
-- ✅ Build production-ready AI applications
-- ✅ Deliver measurable business value
-- ✅ Work independently across the full stack
-- ✅ Communicate technical solutions to stakeholders
+- ✅ Build AI-powered applications using Large Language Models
+- ✅ Design interactive dashboards for business intelligence
+- ✅ Develop product-specific analysis tools for manufacturing companies
+- ✅ Work independently on end-to-end projects from requirements to deployment
 
 **Interested in discussing how I can bring similar innovation to your team?**
 
 <div align="center">
 
 📧 **Email:** varaalakshime.l@northeastern.edu  
-💼 **LinkedIn:** [Your LinkedIn URL]  
-🐙 **GitHub:** [Your GitHub Profile]  
-📱 **Phone:** [Your Phone Number]
+💼 **LinkedIn:** [https://www.linkedin.com/in/varaalakshime-v]  
 
 **Available for Co-op:** May 2025 - December 2025
 
@@ -568,30 +526,39 @@ This project demonstrates my ability to:
 
 ## 📄 Project Context
 
-Developed during Data Scientist internship at **TVS Sensing Solutions Private Limited** (Coimbatore, India) - A leading automotive IoT and sensing solutions provider. Currently being evaluated for company-wide deployment across business units.
+Developed during Data Scientist internship at **TVS Sensing Solutions Private Limited, Madurai** - A leading manufacturer of advanced sensing technologies and electronic components under the TVS Group, specializing in pressure sensors, speed sensors, temperature sensors, and position sensors for automotive and industrial applications.
+
+**Internship Duration:** December 16, 2024 - April 23, 2025  
+**Academic Program:** 5 Year Integrated M.Sc. (Data Science), Thiagarajar College of Engineering
+
+---
+
+## 📚 References & Standards
+
+- **Ollama Documentation** - LLM integration and prompt engineering
+- **Flask Documentation** - Web framework implementation
+- **Plotly Documentation** - Interactive visualizations
+- **Pandas Documentation** - Data manipulation and analysis
+
+---
+
+## 🙏 Acknowledgments
+
+- **TVS Sensing Solutions Private Limited** - Internship opportunity and domain expertise
+- **Dr. M. S. Sabitha** (External Guide) - Technical guidance and project mentorship
+- **Dr. C. Mahadevi** (Internal Guide) - Academic supervision
+- **Thiagarajar College of Engineering** - Academic support and resources
 
 ---
 
 <div align="center">
 
-**⭐ Built with Flask • Mistral LLM • Plotly • Pandas ⭐**
+**⭐ Built with Flask • Ollama Mistral • Plotly • Pandas ⭐**
 
 *Transforming Market Research Through AI Automation*
 
+### ⭐ If you found this project helpful, please star the repository!
+
+**Built with ❤️ for competitive intelligence and AI-powered analytics**
+
 </div>
-
-<img width="1183" height="423" alt="image" src="https://github.com/user-attachments/assets/8455824d-e021-468b-ab7c-a44d62a49bab" />
-<img width="1182" height="563" alt="image" src="https://github.com/user-attachments/assets/3f8a4ec8-217d-4413-b5c6-175cf134a4db" />
-<img width="1182" height="566" alt="image" src="https://github.com/user-attachments/assets/e2a2b68a-9240-4d7e-9b48-4f6470f4f9b8" />
-
-<img width="1182" height="196" alt="image" src="https://github.com/user-attachments/assets/33c6abac-1a7f-473e-8181-49cc398f647d" />
-<img width="1183" height="172" alt="image" src="https://github.com/user-attachments/assets/ef322096-ea63-47fb-b4a7-ff35d69bffbf" />
-<img width="1183" height="496" alt="image" src="https://github.com/user-attachments/assets/4522e06a-ad51-461c-8a41-90306bf43cb1" />
-<img width="1182" height="571" alt="image" src="https://github.com/user-attachments/assets/3a4e4a24-34a0-48ab-a1c2-4eab51e26b38" />
-<img width="1182" height="543" alt="image" src="https://github.com/user-attachments/assets/6a2bfe45-8e89-4547-8956-e31d6afcb154" />
-<img width="1182" height="551" alt="image" src="https://github.com/user-attachments/assets/119053d3-d91f-45f8-a4db-4df9a22fc7d3" />
-<img width="1182" height="548" alt="image" src="https://github.com/user-attachments/assets/f8adfa17-0b32-426f-92c6-809bdbf78a95" />
-<img width="1183" height="349" alt="image" src="https://github.com/user-attachments/assets/6799a6da-3063-4cdd-9aa5-1c2ebd5a9912" />
-<img width="1183" height="559" alt="image" src="https://github.com/user-attachments/assets/3e1e0e63-4eda-48d3-afa3-080e45801160" />
-<img width="948" height="561" alt="image" src="https://github.com/user-attachments/assets/7185e81f-5af6-459d-ae45-f8f0b20cd1d0" />
-<img width="1183" height="558" alt="image" src="https://github.com/user-attachments/assets/3c80fee5-af39-441a-95e8-cda07a5282ba" />
