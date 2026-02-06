@@ -18,18 +18,16 @@
 > **Note:** This is a portfolio project showcasing work completed during my Data Science internship at TVS Sensing Solutions. The repository is for demonstration purposes only.
 
 ---
-
 ## 💡 The Business Problem
 
-At **TVS Sensing Solutions**, the business development team needed competitor analysis for market positioning and strategic planning. However, existing competitor analysis tools had critical limitations:
+At **TVS Sensing Solutions**, the business development team needed a tool to quickly generate competitor analysis for market positioning and strategic planning. The challenge was to create a customizable system that could:
 
-- ❌ Generic insights provided broad industry data without product-specific focus
-- ❌ Irrelevant competitors included companies from unrelated domains
-- ❌ Manual research for gathering competitor information was time-consuming
-- ❌ No customization to filter by TVS's specific product categories
-- ❌ Unstructured outputs lacked organization for strategic decision-making
+- Generate competitor information based on specific product categories
+- Focus on TVS's sensor manufacturing portfolio
+- Provide structured, organized outputs for decision-making
+- Deliver results faster than manual web research
 
-**The Challenge:** Build a customized system that analyzes competitors specifically relevant to TVS's sensor manufacturing portfolio with automated data generation and visualization.
+**The Challenge:** Build a tool that generates product-specific competitor intelligence with automated data generation and visualization.
 
 ---
 
@@ -46,20 +44,19 @@ I designed and built an **AI-powered web application** that provides product-spe
 Engineered intelligent **feature engineering and dynamic query construction** that transforms user inputs into precise AI prompts, ensuring the Ollama Mistral model generates structured, relevant competitor data. Implemented a sophisticated ranking algorithm that sorts competitors by market share and turnover to identify true market leaders.
 
 ---
-
-## 📊 Business Impact
+ ## 📊 Business Impact
 
 | Metric | Before | After | Result |
 |--------|--------|-------|--------|
-| **Analysis Scope** | Generic industry data | Product-specific insights | **Targeted intelligence** |
-| **Data Generation** | Manual web research | Automated AI generation | **Instant results** |
-| **Competitor Filtering** | All industries | TVS product categories only | **Relevant competitors** |
+| **Analysis Tool** | Manual web research | AI-powered generation | **Faster results** |
+| **Query Customization** | Generic searches | Product-specific prompts | **Targeted queries** |
 | **Data Structure** | Unorganized notes | Structured DataFrames | **Analysis-ready** |
-| **Output Format** | Manual reports | Dashboard + Excel export | **Professional reports** |
+| **Output Format** | Manual compilation | Dashboard + Excel export | **Professional reports** |
+| **Visualization** | Static notes | 6+ Interactive charts | **Better insights** |
 
 **Real-World Results:**
-- ✅ Successfully automated competitor data generation using Ollama Mistral LLM
-- ✅ Built product-specific filtering for TVS's sensor portfolio
+- ✅ Built AI-powered system using Ollama Mistral LLM for competitor data generation
+- ✅ Created product-specific prompt engineering for TVS's sensor portfolio
 - ✅ Delivered interactive dashboard with 6+ Plotly visualizations
 - ✅ Generated structured Excel reports for business presentations
 
@@ -97,7 +94,7 @@ Engineered intelligent **feature engineering and dynamic query construction** th
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                  FEATURE ENGINEERING MODULE                      │
+│                  PROMPT CONSTRUCTION MODULE                      │
 │                                                                  │
 │   Input: Product Type, Market, Sub-segment, Technology          │
 │   Process: Combine → Format → Structure                         │
@@ -148,8 +145,6 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 │   2. Then by Turnover (descending)                              │
 │   3. Select Top N competitors                                   │
 │                                                                  │
-│   Example: Bosch (25%, $5B) ranks above Continental (20%, $6B)  │
-│                                                                  │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
@@ -175,7 +170,6 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 **Layer 3: AI Engine** - Ollama Mistral for competitor data generation  
 **Layer 4: Data Pipeline** - Cleaning, structuring, and ranking  
 **Layer 5: Visualization** - Interactive Plotly dashboards and Excel export
-
 ---
 
 ## 🔄 System Workflow
@@ -184,17 +178,18 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 
 <div align="center">
 AI COMPETITOR ANALYSIS SYSTEM
+ETITOR ANALYSIS SYSTEM
     ┌────────────────────────────────────────────────────────────┐
     │                                                            │
     │                                                            │
-    │         ╔══════════════════════════════════╗              │
-    │         ║   Input Product Specifications   ║              │
-    │         ╚══════════════════════════════════╝              │
+    │         ╔══════════════════════════════════╗               │
+    │         ║   Input Product Specifications   ║               │
+    │         ╚══════════════════════════════════╝               │
     │                      ▲                                     │
     │                      │                                     │
-    │         ╔══════════════════════════════════╗              │
-┌───┴───┐     ║  Generate Competitor Analysis    ║              │
-│       │────▶╚══════════════════════════════════╝              │
+    │         ╔══════════════════════════════════╗               │
+┌───┴───┐     ║  Generate Competitor Analysis    ║               │
+│       │────▶╚══════════════════════════════════╝               │
 │ User  │              ▲                                         │
 │       │              │                                         │
 └───┬───┘     ╔══════════════════════════════════╗              │
@@ -213,6 +208,7 @@ AI COMPETITOR ANALYSIS SYSTEM
     │                                                            │
     │                                                            │
     └────────────────────────────────────────────────────────────┘
+
 
 </div>
 
@@ -635,8 +631,6 @@ External Entity          Process              Data Store
 - **Real-time web scraping:** Automated updates from competitor websites
 - **Sentiment analysis:** Analyze customer reviews and social media
 - **Predictive analytics:** Forecast competitor market share trends
-- **Multi-language support:** Process documents in multiple languages
-- **API integration:** Connect to market research databases
 - **Mobile app:** On-the-go competitor intelligence access
 
 ---
