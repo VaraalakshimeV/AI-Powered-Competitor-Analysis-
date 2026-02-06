@@ -78,91 +78,91 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        USER INTERFACE                           │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │  Home Page   │  │ Input Form   │  │  Dashboard   │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │  Home Page   │  │ Input Form   │  │  Dashboard   │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   FLASK WEB APPLICATION                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │   Routes     │  │ Form Handler │  │ Template     │         │
-│  │   (/index)   │  │   Validator  │  │  Renderer    │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
+│                   FLASK WEB APPLICATION                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │   Routes     │  │ Form Handler │  │ Template     │           │
+│  │   (/index)   │  │   Validator  │  │  Renderer    │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                  PROMPT CONSTRUCTION MODULE                      │
-│                                                                  │
+│                  PROMPT CONSTRUCTION MODULE                     │
+│                                                                 │
 │   Input: Product Type, Market, Sub-segment, Technology          │
 │   Process: Combine → Format → Structure                         │
 │   Output: "pressure sensors in automotive using MEMS"           │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│               DYNAMIC QUERY CONSTRUCTION                         │
-│                                                                  │
+│               DYNAMIC QUERY CONSTRUCTION                        │
+│                                                                 │
 │   Context: "I am an industrial expert in automotive..."         │
 │   Query: "List top 10 Indian companies manufacturing..."        │
 │   Format: JSON with 12 fields (Company, HQ, Market Share...)    │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    OLLAMA MISTRAL LLM                            │
-│                                                                  │
-│   Model: mistral                                                 │
+│                    OLLAMA MISTRAL LLM                           │
+│                                                                 │
+│   Model: mistral                                                │
 │   Input: Structured prompt with context                         │
 │   Output: JSON array of competitor objects                      │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│               DATA PROCESSING PIPELINE                           │
-│                                                                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │ JSON Parser  │→ │Data Cleaning │→ │Normalization │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
-│                                                                  │
+│               DATA PROCESSING PIPELINE                          │
+│                                                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │ JSON Parser  │→ │Data Cleaning │→ │Normalization │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│                                                                 │
 │  • Remove markdown ```json``` tags                              │
 │  • Convert "5%" → 5.0                                           │
 │  • Convert "5 Billion USD" → 5000000000                         │
 │  • Extract "500-1000 employees" → 750                           │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   RANKING ALGORITHM                              │
-│                                                                  │
+│                   RANKING ALGORITHM                             │
+│                                                                 │
 │   1. Sort by Market Share (descending)                          │
 │   2. Then by Turnover (descending)                              │
 │   3. Select Top N competitors                                   │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    OUTPUT GENERATION                             │
-│                                                                  │
-│  ┌──────────────────┐              ┌──────────────────┐        │
-│  │  VISUALIZATIONS  │              │  EXCEL EXPORT    │        │
-│  ├──────────────────┤              ├──────────────────┤        │
-│  │ • Pie Chart      │              │ • XlsxWriter     │        │
-│  │ • Bar Charts (3) │              │ • Formatted      │        │
-│  │ • Scatter Plot   │              │ • All 12 fields  │        │
-│  │ • Histogram      │              │ • Download ready │        │
-│  └──────────────────┘              └──────────────────┘        │
-│                                                                  │
+│                    OUTPUT GENERATION                            │
+│                                                                 │
+│  ┌──────────────────┐              ┌──────────────────┐         │
+│  │  VISUALIZATIONS  │              │  EXCEL EXPORT    │         │
+│  ├──────────────────┤              ├──────────────────┤         │
+│  │ • Pie Chart      │              │ • XlsxWriter     │         │
+│  │ • Bar Charts (3) │              │ • Formatted      │         │
+│  │ • Scatter Plot   │              │ • All 12 fields  │         │
+│  │ • Histogram      │              │ • Download ready │         │
+│  └──────────────────┘              └──────────────────┘         │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
-
+---
 **Five-Layer Architecture:**
 
 **Layer 1: User Input** - Web form capturing product and market specifications  
@@ -178,7 +178,7 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 
 <div align="center">
 AI COMPETITOR ANALYSIS SYSTEM
-ETITOR ANALYSIS SYSTEM
+```
     ┌────────────────────────────────────────────────────────────┐
     │                                                            │
     │                                                            │
@@ -189,27 +189,27 @@ ETITOR ANALYSIS SYSTEM
     │                      │                                     │
     │         ╔══════════════════════════════════╗               │
 ┌───┴───┐     ║  Generate Competitor Analysis    ║               │
-│       │────▶╚══════════════════════════════════╝               │
+│       │────▶╚══════════════════════════════════╝               |
 │ User  │              ▲                                         │
 │       │              │                                         │
-└───┬───┘     ╔══════════════════════════════════╗              │
-    │         ║   View Interactive Dashboard     ║              │
-    │    ────▶╚══════════════════════════════════╝              │
+└───┬───┘     ╔══════════════════════════════════╗               │
+    │         ║   View Interactive Dashboard     ║               │
+    │    ────▶╚══════════════════════════════════╝               │
     │                      ▲                                     │
     │                      │                                     │
-    │         ╔══════════════════════════════════╗              │
-    │         ║     Export Excel Report          ║              │
-    │    ────▶╚══════════════════════════════════╝              │
+    │         ╔══════════════════════════════════╗               │
+    │         ║     Export Excel Report          ║               │
+    │    ────▶╚══════════════════════════════════╝               │
     │                      ▲                                     │
     │                      │                                     │
-    │         ╔══════════════════════════════════╗              │
-    │         ║  Ask Custom Questions (Chatbot)  ║              │
-    │    ────▶╚══════════════════════════════════╝              │
+    │         ╔══════════════════════════════════╗               │
+    │         ║  Ask Custom Questions (Chatbot)  ║               │
+    │    ────▶╚══════════════════════════════════╝               |
     │                                                            │
     │                                                            │
     └────────────────────────────────────────────────────────────┘
 
-
+```
 </div>
 
 <br>
@@ -222,66 +222,7 @@ ETITOR ANALYSIS SYSTEM
 
 <div align="center">
 
-External Entity          Process              Data Store
-───────────────         ─────────            ───────────
 
-                    ┌─────────────┐
-    ┌──────┐        │   Capture   │
-    │      │───────▶│User Inputs  │
-    │ User │        │             │
-    │      │        └──────┬──────┘
-    └──────┘               │
-                           ▼
-                    ┌─────────────┐        ║════════════║
-                    │   Feature   │───────▶║ Input Data ║
-                    │ Engineering │        ║════════════║
-                    └──────┬──────┘
-                           │
-                           ▼
-                    ┌─────────────┐
-                    │    Build    │
-                    │ AI Prompt   │
-                    └──────┬──────┘
-                           │
-                           ▼
-                    ┌─────────────┐
-                    │   Ollama    │
-                    │  Mistral    │
-                    │     LLM     │
-                    └──────┬──────┘
-                           │
-                           ▼
-                    ┌─────────────┐        ║════════════║
-                    │    Parse    │───────▶║   Raw      ║
-                    │     JSON    │        ║ Competitor ║
-                    └──────┬──────┘        ║   Data     ║
-                           │               ║════════════║
-                           ▼
-                    ┌─────────────┐
-                    │    Clean    │
-                    │  & Normalize│
-                    │     Data    │
-                    └──────┬──────┘
-                           │
-                           ▼
-                    ┌─────────────┐        ║════════════║
-                    │   Ranking   │───────▶║  Ranked    ║
-                    │  Algorithm  │        ║ Competitor ║
-                    └──────┬──────┘        ║   List     ║
-                           │               ║════════════║
-                ┌──────────┴──────────┐
-                ▼                     ▼
-         ┌─────────────┐       ┌─────────────┐
-    ┌───│ Visualize   │       │   Export    │
-    │   │  Dashboard  │       │    Excel    │
-    │   └─────────────┘       └─────────────┘
-    │          │                      │
-    └──────────┴──────────────────────┘
-               │
-               ▼
-           ┌──────┐
-           │ User │
-           └──────┘
 
 </div>
 
