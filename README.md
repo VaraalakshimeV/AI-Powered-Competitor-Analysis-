@@ -1,5 +1,5 @@
 # 🎯 AI-Powered Competitor Analysis System
-### *Customized Market Intelligence for Manufacturing | Ollama Mistral LLM Integration*
+### *Market Intelligence Tool with LLM Integration*
 
 <div align="center">
 
@@ -15,9 +15,10 @@
 
 ---
 
-> **Note:** This is a portfolio project showcasing work completed during my Data Science internship at TVS Sensing Solutions. The repository is for demonstration purposes only.
+> **Note:** This is a portfolio project showcasing work completed during my Data Science internship at TVS Sensing Solutions.
 
 ---
+
 ## 💡 The Business Problem
 
 At **TVS Sensing Solutions**, the business development team needed a tool to quickly generate competitor analysis for market positioning and strategic planning. The challenge was to create a customizable system that could:
@@ -33,18 +34,19 @@ At **TVS Sensing Solutions**, the business development team needed a tool to qui
 
 ## ✨ My Solution
 
-I designed and built an **AI-powered web application** that provides product-specific competitor intelligence tailored to TVS's manufacturing segments—from data collection to structured analysis and visualization.
+I built an **AI-powered web application** using Flask and Ollama Mistral LLM that generates competitor profiles based on user-specified criteria.
 
 ### **What It Does:**
-**Input:** User specifies product type (e.g., pressure sensors), market focus (Indian/Global), and competitor count  
-**Process:** Feature Engineering → Dynamic Query Construction → Ollama Mistral LLM → Data Cleaning → Ranking Algorithm  
+**Input:** User specifies product type (e.g., pressure sensors), market focus (Indian/Global), and number of competitors  
+**Process:** Dynamic Query Construction → Ollama Mistral LLM → Data Processing → Ranking  
 **Output:** Structured competitor profiles with interactive dashboard + Excel export
 
 ### **Key Innovation:**
-Engineered intelligent **feature engineering and dynamic query construction** that transforms user inputs into precise AI prompts, ensuring the Ollama Mistral model generates structured, relevant competitor data. Implemented a sophisticated ranking algorithm that sorts competitors by market share and turnover to identify true market leaders.
+Designed intelligent **prompt engineering** that transforms user inputs into structured queries for the Ollama Mistral model. Implemented data cleaning and a ranking algorithm that sorts generated competitor data by market share and turnover.
 
 ---
- ## 📊 Business Impact
+
+## 📊 Business Impact
 
 | Metric | Before | After | Result |
 |--------|--------|-------|--------|
@@ -78,91 +80,91 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        USER INTERFACE                           │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│  │  Home Page   │  │ Input Form   │  │  Dashboard   │           │
-│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
+│  │  Home Page   │  │ Input Form   │  │  Dashboard   │         │
+│  └──────────────┘  └──────────────┘  └──────────────┘         │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   FLASK WEB APPLICATION                         │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│  │   Routes     │  │ Form Handler │  │ Template     │           │
-│  │   (/index)   │  │   Validator  │  │  Renderer    │           │
-│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│                   FLASK WEB APPLICATION                          │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
+│  │   Routes     │  │ Form Handler │  │ Template     │         │
+│  │   (/index)   │  │   Validator  │  │  Renderer    │         │
+│  └──────────────┘  └──────────────┘  └──────────────┘         │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                  PROMPT CONSTRUCTION MODULE                     │
-│                                                                 │
+│                  PROMPT CONSTRUCTION MODULE                      │
+│                                                                  │
 │   Input: Product Type, Market, Sub-segment, Technology          │
 │   Process: Combine → Format → Structure                         │
 │   Output: "pressure sensors in automotive using MEMS"           │
-│                                                                 │
+│                                                                  │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│               DYNAMIC QUERY CONSTRUCTION                        │
-│                                                                 │
+│               DYNAMIC QUERY CONSTRUCTION                         │
+│                                                                  │
 │   Context: "I am an industrial expert in automotive..."         │
 │   Query: "List top 10 Indian companies manufacturing..."        │
 │   Format: JSON with 12 fields (Company, HQ, Market Share...)    │
-│                                                                 │
+│                                                                  │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    OLLAMA MISTRAL LLM                           │
-│                                                                 │
-│   Model: mistral                                                │
+│                    OLLAMA MISTRAL LLM                            │
+│                                                                  │
+│   Model: mistral                                                 │
 │   Input: Structured prompt with context                         │
 │   Output: JSON array of competitor objects                      │
-│                                                                 │
+│                                                                  │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│               DATA PROCESSING PIPELINE                          │
-│                                                                 │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
-│  │ JSON Parser  │→ │Data Cleaning │→ │Normalization │           │
-│  └──────────────┘  └──────────────┘  └──────────────┘           │
-│                                                                 │
+│               DATA PROCESSING PIPELINE                           │
+│                                                                  │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
+│  │ JSON Parser  │→ │Data Cleaning │→ │Normalization │         │
+│  └──────────────┘  └──────────────┘  └──────────────┘         │
+│                                                                  │
 │  • Remove markdown ```json``` tags                              │
 │  • Convert "5%" → 5.0                                           │
 │  • Convert "5 Billion USD" → 5000000000                         │
 │  • Extract "500-1000 employees" → 750                           │
-│                                                                 │
+│                                                                  │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   RANKING ALGORITHM                             │
-│                                                                 │
+│                   RANKING ALGORITHM                              │
+│                                                                  │
 │   1. Sort by Market Share (descending)                          │
 │   2. Then by Turnover (descending)                              │
 │   3. Select Top N competitors                                   │
-│                                                                 │
+│                                                                  │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    OUTPUT GENERATION                            │
-│                                                                 │
-│  ┌──────────────────┐              ┌──────────────────┐         │
-│  │  VISUALIZATIONS  │              │  EXCEL EXPORT    │         │
-│  ├──────────────────┤              ├──────────────────┤         │
-│  │ • Pie Chart      │              │ • XlsxWriter     │         │
-│  │ • Bar Charts (3) │              │ • Formatted      │         │
-│  │ • Scatter Plot   │              │ • All 12 fields  │         │
-│  │ • Histogram      │              │ • Download ready │         │
-│  └──────────────────┘              └──────────────────┘         │
-│                                                                 │
+│                    OUTPUT GENERATION                             │
+│                                                                  │
+│  ┌──────────────────┐              ┌──────────────────┐        │
+│  │  VISUALIZATIONS  │              │  EXCEL EXPORT    │        │
+│  ├──────────────────┤              ├──────────────────┤        │
+│  │ • Pie Chart      │              │ • XlsxWriter     │        │
+│  │ • Bar Charts (3) │              │ • Formatted      │        │
+│  │ • Scatter Plot   │              │ • All 12 fields  │        │
+│  │ • Histogram      │              │ • Download ready │        │
+│  └──────────────────┘              └──────────────────┘        │
+│                                                                  │
 └─────────────────────────────────────────────────────────────────┘
 ```
----
+
 **Five-Layer Architecture:**
 
 **Layer 1: User Input** - Web form capturing product and market specifications  
@@ -170,6 +172,7 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 **Layer 3: AI Engine** - Ollama Mistral for competitor data generation  
 **Layer 4: Data Pipeline** - Cleaning, structuring, and ranking  
 **Layer 5: Visualization** - Interactive Plotly dashboards and Excel export
+
 ---
 
 ## 🔄 System Workflow
@@ -177,39 +180,39 @@ Engineered intelligent **feature engineering and dynamic query construction** th
 ### **Use Case Diagram**
 
 <div align="center">
-AI COMPETITOR ANALYSIS SYSTEM
 ```
+AI COMPETITOR ANALYSIS SYSTEM
     ┌────────────────────────────────────────────────────────────┐
     │                                                            │
     │                                                            │
-    │         ╔══════════════════════════════════╗               │
-    │         ║   Input Product Specifications   ║               │
-    │         ╚══════════════════════════════════╝               │
+    │         ╔══════════════════════════════════╗              │
+    │         ║   Input Product Specifications   ║              │
+    │         ╚══════════════════════════════════╝              │
     │                      ▲                                     │
     │                      │                                     │
-    │         ╔══════════════════════════════════╗               │
-┌───┴───┐     ║  Generate Competitor Analysis    ║               │
-│       │────▶╚══════════════════════════════════╝               |
+    │         ╔══════════════════════════════════╗              │
+┌───┴───┐     ║  Generate Competitor Analysis    ║              │
+│       │────▶╚══════════════════════════════════╝              │
 │ User  │              ▲                                         │
 │       │              │                                         │
-└───┬───┘     ╔══════════════════════════════════╗               │
-    │         ║   View Interactive Dashboard     ║               │
-    │    ────▶╚══════════════════════════════════╝               │
+└───┬───┘     ╔══════════════════════════════════╗              │
+    │         ║   View Interactive Dashboard     ║              │
+    │    ────▶╚══════════════════════════════════╝              │
     │                      ▲                                     │
     │                      │                                     │
-    │         ╔══════════════════════════════════╗               │
-    │         ║     Export Excel Report          ║               │
-    │    ────▶╚══════════════════════════════════╝               │
+    │         ╔══════════════════════════════════╗              │
+    │         ║     Export Excel Report          ║              │
+    │    ────▶╚══════════════════════════════════╝              │
     │                      ▲                                     │
     │                      │                                     │
-    │         ╔══════════════════════════════════╗               │
-    │         ║  Ask Custom Questions (Chatbot)  ║               │
-    │    ────▶╚══════════════════════════════════╝               |
+    │         ╔══════════════════════════════════╗              │
+    │         ║  Ask Custom Questions (Chatbot)  ║              │
+    │    ────▶╚══════════════════════════════════╝              │
     │                                                            │
     │                                                            │
     └────────────────────────────────────────────────────────────┘
-
 ```
+
 </div>
 
 <br>
@@ -218,17 +221,17 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 <br><br>
 
-### **Detailed Data Flow**
+### **Detailed Data Flow Diagram**
 
 <div align="center">
 
-
+<img width="160" height="477" alt="Data Flow Diagram" src="https://github.com/user-attachments/assets/de99c525-e56e-48b3-98ab-f2f695798b7a" />
 
 </div>
 
 <br>
 
-*End-to-end processing pipeline from input to actionable insights*
+*End-to-end processing pipeline from input to output*
 
 ---
 
@@ -356,7 +359,7 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 <br>
 
-*Scatter plot identifying high-performing companies with optimal resource utilization*
+*Scatter plot identifying company size and market position*
 
 <br><br>
 
@@ -372,7 +375,7 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 <br>
 
-*Conversational interface for ad-hoc competitor research queries*
+*Conversational interface for ad-hoc queries*
 
 <br><br>
 
@@ -388,7 +391,7 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 <br>
 
-*Structured data export for business presentations and reports*
+*Structured data export for reports*
 
 <br><br>
 
@@ -404,7 +407,7 @@ AI COMPETITOR ANALYSIS SYSTEM
 - Competitor count configuration
 - Dynamic field validation
 
-**2. Feature Engineering Engine**
+**2. Prompt Construction Engine**
 - Product description builder
 - Sub-segment combination logic
 - Technology specification integration
@@ -414,22 +417,21 @@ AI COMPETITOR ANALYSIS SYSTEM
 - Ollama Mistral LLM integration
 - Context-aware prompt engineering
 - JSON response parsing
-- Error handling and retry logic
+- Error handling for invalid responses
 
 **4. Data Processing Pipeline**
 - Market share normalization (%, Billion, Million, USD)
 - Turnover standardization across currencies
 - Employee range extraction (e.g., "500-1000" → 750)
-- Missing data handling
+- Data type conversion and cleaning
 
 **5. Ranking Algorithm**
 - Dual-criteria sorting (Market Share × Turnover)
 - Top N competitor selection
-- Tie-breaking logic
-- Data completeness scoring
+- Handles missing values
 
 **6. Visualization Module**
-- 6+ distinct Plotly chart generators
+- 6 distinct Plotly chart types
 - Market share pie charts
 - Employee count bar charts
 - Efficiency scatter plots
@@ -454,52 +456,35 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 | Category | Technologies | Purpose |
 |----------|-------------|---------|
-| **Backend** | Python 3.11, Flask 3.0.0 | Web framework, API routing, business logic |
-| **AI/NLP** | Ollama 0.6.2, Mistral LLM | Competitor insight generation, structured output |
-| **Data Processing** | Pandas 2.1.1, NumPy | Data manipulation, cleaning, ranking algorithms |
+| **Backend** | Python 3.11, Flask 3.0.0 | Web framework, routing, business logic |
+| **AI/NLP** | Ollama 0.6.2, Mistral LLM | Competitor data generation |
+| **Data Processing** | Pandas 2.1.1 | Data manipulation, cleaning, ranking |
 | **Visualization** | Plotly 5.17.0 | Interactive charts and dashboards |
-| **Export** | XlsxWriter | Professional Excel report generation |
-| **Frontend** | HTML5, CSS3, Bootstrap, JavaScript | Responsive UI, dynamic interactions |
+| **Export** | XlsxWriter | Excel report generation |
+| **Frontend** | HTML5, CSS3, Bootstrap | Responsive UI |
+| **Testing** | Pytest | Unit testing |
 
 ---
 
 ## 🎯 Key Features
 
-### **What Makes This System Powerful:**
+### **What This System Does:**
 
-✅ **Product-Specific Intelligence** - Filters competitors based on TVS's exact manufacturing segments
+✅ **Dynamic Form Processing** - Captures user specifications for competitor analysis
 
-✅ **AI-Powered Generation** - Ollama Mistral creates structured competitor profiles on demand
+✅ **LLM Integration** - Uses Ollama Mistral to generate structured competitor data
 
-✅ **Smart Ranking Algorithm** - Dual-criteria sorting by market share and turnover
+✅ **Smart Data Cleaning** - Normalizes multiple data formats from LLM responses
 
-✅ **Interactive Dashboards** - 6+ visualizations for comprehensive analysis
+✅ **Ranking Algorithm** - Sorts competitors by market share and turnover
 
-✅ **Excel Export** - Professional reports ready for presentations
+✅ **Interactive Dashboards** - 6 visualizations for data analysis
 
-✅ **Customizable Filters** - Market type, product segment, sub-segment, technology
+✅ **Excel Export** - Professional reports ready for download
 
-✅ **Real-Time Results** - Instant competitor intelligence generation
+✅ **Customizable Queries** - Market type, product segment, sub-segment, technology filters
 
-✅ **Chatbot Interface** - Ad-hoc research queries with conversational AI
-
----
-
-## 💼 Real-World Impact
-
-### **Internship Deployment Results:**
-
-📈 **Automation:** Replaced manual competitor research with AI-powered generation
-
-📊 **Relevance:** Product-specific filtering ensures only relevant competitors
-
-🎯 **Speed:** Instant results vs hours of manual research
-
-💡 **Structure:** Organized data ready for strategic planning
-
-🔍 **Completeness:** 12 key metrics per competitor (vs 3-4 with manual methods)
-
-⚡ **Scalability:** Analyze 5-50 competitors in single query
+✅ **Chatbot Interface** - Ad-hoc queries with conversational AI
 
 ---
 
@@ -513,26 +498,26 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 ### **Backend Development:**
 - Flask web application development
-- RESTful API design
 - Dynamic form handling
 - File generation and download
+- Error handling
 
 ### **Data Engineering:**
-- ETL pipeline development
-- Multi-format data cleaning
-- Currency and percentage normalization
+- Data cleaning pipeline
+- Multi-format normalization
+- Currency and percentage standardization
 - Ranking algorithm implementation
 
 ### **Data Visualization:**
-- Business intelligence dashboard design
+- Dashboard design
 - Interactive Plotly charts
-- Statistical visualization
+- Multiple visualization types
 - Export functionality
 
 ### **Full-Stack Development:**
 - Frontend UI/UX design
 - Backend logic implementation
-- Database-less architecture
+- Template rendering
 - End-to-end system integration
 
 ---
@@ -541,38 +526,38 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 ### **How I Built This:**
 
-**1. Requirements Gathering** - Met with TVS business team to understand competitor analysis needs
+**1. Requirements Gathering** - Understood competitor analysis needs from TVS team
 
-**2. System Design** - Architected AI-powered solution with Ollama Mistral integration
+**2. System Design** - Designed Flask application with LLM integration
 
-**3. Feature Engineering** - Built intelligent query construction from user inputs
+**3. Prompt Engineering** - Built dynamic query construction from user inputs
 
-**4. AI Integration** - Implemented LLM prompting with structured output validation
+**4. AI Integration** - Implemented Ollama Mistral with structured output validation
 
-**5. Data Pipeline** - Developed cleaning and ranking algorithms for multiple data formats
+**5. Data Pipeline** - Developed cleaning and ranking algorithms
 
-**6. Visualization** - Created 6+ interactive dashboards for analysis
+**6. Visualization** - Created 6 interactive dashboards
 
-**7. Testing & Validation** - Comprehensive testing with TVS team feedback
-
----
-
-## 📊 Results & Impact
-
-- **Product-specific filtering** for TVS's sensor portfolio (pressure, speed, temperature, position)
-- **6+ interactive visualizations** for comprehensive competitor analysis
-- **12 key metrics** extracted per competitor (Company, HQ, Market Share, Products, etc.)
-- **Excel export functionality** for business presentations
-- **Real-time AI generation** replacing hours of manual research
+**7. Testing** - Built pytest test suite for validation
 
 ---
 
-## 🔮 Future Enhancements
+## 🧪 Testing
 
-- **Real-time web scraping:** Automated updates from competitor websites
-- **Sentiment analysis:** Analyze customer reviews and social media
-- **Predictive analytics:** Forecast competitor market share trends
-- **Mobile app:** On-the-go competitor intelligence access
+Created test suite using pytest to validate:
+- Page loading and routing
+- Custom prompt functionality
+- Response accuracy against expected outputs
+```python
+# Sample test structure
+def test_index_page(client):
+    response = client.get("/")
+    assert response.status_code == 200
+
+def test_response_accuracy():
+    expected_output = ["Bosch", "TE Connectivity", "Sensata"]
+    # Validate chatbot responses
+```
 
 ---
 
@@ -582,11 +567,11 @@ I'm a **Data Analytics Engineering graduate student at Northeastern University**
 
 This project demonstrates my ability to:
 - ✅ Build AI-powered applications using Large Language Models
-- ✅ Design interactive dashboards for business intelligence
-- ✅ Develop product-specific analysis tools for manufacturing companies
-- ✅ Work independently on end-to-end projects from requirements to deployment
+- ✅ Design interactive dashboards for data visualization
+- ✅ Develop end-to-end web applications
+- ✅ Work independently on complete project lifecycle
 
-**Interested in discussing how I can bring similar innovation to your team?**
+**Interested in discussing this project?**
 
 <div align="center">
 
@@ -608,7 +593,7 @@ Developed during Data Scientist internship at **TVS Sensing Solutions Private Li
 
 ---
 
-## 📚 References & Standards
+## 📚 References
 
 - **Ollama Documentation** - LLM integration and prompt engineering
 - **Flask Documentation** - Web framework implementation
@@ -630,10 +615,8 @@ Developed during Data Scientist internship at **TVS Sensing Solutions Private Li
 
 **⭐ Built with Flask • Ollama Mistral • Plotly • Pandas ⭐**
 
-*Transforming Market Research Through AI Automation*
+*AI-Powered Competitor Analysis Tool*
 
 ### ⭐ If you found this project helpful, please star the repository!
-
-**Built with ❤️ for competitive intelligence and AI-powered analytics**
 
 </div>
