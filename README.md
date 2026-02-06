@@ -178,58 +178,94 @@ Designed intelligent **prompt engineering** that transforms user inputs into str
 ## 🔄 System Workflow
 
 ### **Use Case Diagram**
-
-<div align="center">
 ```
-AI COMPETITOR ANALYSIS SYSTEM
-    ┌────────────────────────────────────────────────────────────┐
-    │                                                            │
-    │                                                            │
-    │         ╔══════════════════════════════════╗              │
-    │         ║   Input Product Specifications   ║              │
-    │         ╚══════════════════════════════════╝              │
-    │                      ▲                                     │
-    │                      │                                     │
-    │         ╔══════════════════════════════════╗              │
-┌───┴───┐     ║  Generate Competitor Analysis    ║              │
-│       │────▶╚══════════════════════════════════╝              │
-│ User  │              ▲                                         │
-│       │              │                                         │
-└───┬───┘     ╔══════════════════════════════════╗              │
-    │         ║   View Interactive Dashboard     ║              │
-    │    ────▶╚══════════════════════════════════╝              │
-    │                      ▲                                     │
-    │                      │                                     │
-    │         ╔══════════════════════════════════╗              │
-    │         ║     Export Excel Report          ║              │
-    │    ────▶╚══════════════════════════════════╝              │
-    │                      ▲                                     │
-    │                      │                                     │
-    │         ╔══════════════════════════════════╗              │
-    │         ║  Ask Custom Questions (Chatbot)  ║              │
-    │    ────▶╚══════════════════════════════════╝              │
-    │                                                            │
-    │                                                            │
-    └────────────────────────────────────────────────────────────┘
+                    ┌──────────────────────────┐
+                    │         USER             │
+                    └───────────┬──────────────┘
+                                │
+                ┌───────────────┼───────────────┐
+                │               │               │
+                ▼               ▼               ▼
+    ┌──────────────────┐  ┌─────────────┐  ┌─────────────┐
+    │ Input Product    │  │View         │  │Export Excel │
+    │ Specifications   │  │Dashboard    │  │Report       │
+    └──────────────────┘  └─────────────┘  └─────────────┘
+                │
+                ▼
+    ┌──────────────────────┐
+    │ Generate Competitor  │
+    │ Analysis             │
+    └──────────────────────┘
+                │
+                ▼
+    ┌──────────────────────┐
+    │ Ask Custom Questions │
+    │ (Chatbot)            │
+    └──────────────────────┘
 ```
 
-</div>
+*Complete system capabilities showing user interactions*
 
 <br>
-
-*Complete system capabilities showing user interactions and data flow*
-
-<br><br>
 
 ### **Detailed Data Flow Diagram**
-
-<div align="center">
-
-<img width="160" height="477" alt="Data Flow Diagram" src="https://github.com/user-attachments/assets/de99c525-e56e-48b3-98ab-f2f695798b7a" />
-
-</div>
-
-<br>
+```
+                    ┌──────────┐
+                    │   USER   │
+                    └─────┬────┘
+                          │
+                          ▼
+                 ┌────────────────┐
+                 │  Input Form    │
+                 │ • Product Type │
+                 │ • Market       │
+                 │ • Count        │
+                 └────────┬───────┘
+                          │
+                          ▼
+                 ┌────────────────┐
+                 │ Build Prompt   │
+                 │ Construction   │
+                 └────────┬───────┘
+                          │
+                          ▼
+                 ┌────────────────┐
+                 │ Ollama Mistral │
+                 │      LLM       │
+                 └────────┬───────┘
+                          │
+                          ▼
+                 ┌────────────────┐
+                 │  Parse JSON    │
+                 │   Response     │
+                 └────────┬───────┘
+                          │
+                          ▼
+                 ┌────────────────┐
+                 │ Clean & Norm.  │
+                 │     Data       │
+                 └────────┬───────┘
+                          │
+                          ▼
+                 ┌────────────────┐
+                 │ Rank by Market │
+                 │ Share/Turnover │
+                 └────────┬───────┘
+                          │
+                ┌─────────┴─────────┐
+                ▼                   ▼
+         ┌─────────────┐     ┌─────────────┐
+         │   Plotly    │     │   Excel     │
+         │  Dashboard  │     │   Export    │
+         └──────┬──────┘     └──────┬──────┘
+                │                   │
+                └─────────┬─────────┘
+                          │
+                          ▼
+                    ┌──────────┐
+                    │   USER   │
+                    └──────────┘
+```
 
 *End-to-end processing pipeline from input to output*
 
@@ -280,6 +316,24 @@ AI COMPETITOR ANALYSIS SYSTEM
 <br>
 
 *Additional filters for sub-segment and technology specifications*
+
+<br><br>
+
+---
+
+### **Market Toggle & Excel Download**
+
+<div align="center">
+
+<img width="1182" height="196" alt="Toggle Switch" src="https://github.com/user-attachments/assets/e84acfc8-e6bd-4004-b897-70a819045c53" />
+
+<img width="1183" height="172" alt="Excel Download" src="https://github.com/user-attachments/assets/03f0cced-4bf7-431a-882a-f0163ff5cbb9" />
+
+</div>
+
+<br>
+
+*Indian/Global market toggle and instant Excel download functionality*
 
 <br><br>
 
@@ -369,7 +423,7 @@ AI COMPETITOR ANALYSIS SYSTEM
 
 <div align="center">
 
-<img width="1183" height="559" alt="Chatbot" src="https://github.com/user-attachments/assets/3e1e0e63-4eda-48d3-afa3-080e45801160" />
+<img width="1183" height="558" alt="Chatbot" src="https://github.com/user-attachments/assets/3a877b09-b059-43d5-b743-c83681ed6d52" />
 
 </div>
 
