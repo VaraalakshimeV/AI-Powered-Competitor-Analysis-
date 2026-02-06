@@ -80,88 +80,88 @@ Designed intelligent **prompt engineering** that transforms user inputs into str
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │                        USER INTERFACE                           │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │  Home Page   │  │ Input Form   │  │  Dashboard   │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │  Home Page   │  │ Input Form   │  │  Dashboard   │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   FLASK WEB APPLICATION                          │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │   Routes     │  │ Form Handler │  │ Template     │         │
-│  │   (/index)   │  │   Validator  │  │  Renderer    │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
+│                   FLASK WEB APPLICATION                         │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │   Routes     │  │ Form Handler │  │ Template     │           │
+│  │   (/index)   │  │   Validator  │  │  Renderer    │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                  PROMPT CONSTRUCTION MODULE                      │
-│                                                                  │
+│                  PROMPT CONSTRUCTION MODULE                     │
+│                                                                 │
 │   Input: Product Type, Market, Sub-segment, Technology          │
 │   Process: Combine → Format → Structure                         │
 │   Output: "pressure sensors in automotive using MEMS"           │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│               DYNAMIC QUERY CONSTRUCTION                         │
-│                                                                  │
+│               DYNAMIC QUERY CONSTRUCTION                        │
+│                                                                 │
 │   Context: "I am an industrial expert in automotive..."         │
 │   Query: "List top 10 Indian companies manufacturing..."        │
 │   Format: JSON with 12 fields (Company, HQ, Market Share...)    │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    OLLAMA MISTRAL LLM                            │
-│                                                                  │
-│   Model: mistral                                                 │
+│                    OLLAMA MISTRAL LLM                           │
+│                                                                 │
+│   Model: mistral                                                │
 │   Input: Structured prompt with context                         │
 │   Output: JSON array of competitor objects                      │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│               DATA PROCESSING PIPELINE                           │
-│                                                                  │
-│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐         │
-│  │ JSON Parser  │→ │Data Cleaning │→ │Normalization │         │
-│  └──────────────┘  └──────────────┘  └──────────────┘         │
-│                                                                  │
+│               DATA PROCESSING PIPELINE                          │
+│                                                                 │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐           │
+│  │ JSON Parser  │→ │Data Cleaning │→ │Normalization │           │
+│  └──────────────┘  └──────────────┘  └──────────────┘           │
+│                                                                 │
 │  • Remove markdown ```json``` tags                              │
 │  • Convert "5%" → 5.0                                           │
 │  • Convert "5 Billion USD" → 5000000000                         │
 │  • Extract "500-1000 employees" → 750                           │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                   RANKING ALGORITHM                              │
-│                                                                  │
+│                   RANKING ALGORITHM                             │
+│                                                                 │
 │   1. Sort by Market Share (descending)                          │
 │   2. Then by Turnover (descending)                              │
 │   3. Select Top N competitors                                   │
-│                                                                  │
+│                                                                 │
 └────────────────────────────┬────────────────────────────────────┘
                              │
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                    OUTPUT GENERATION                             │
-│                                                                  │
-│  ┌──────────────────┐              ┌──────────────────┐        │
-│  │  VISUALIZATIONS  │              │  EXCEL EXPORT    │        │
-│  ├──────────────────┤              ├──────────────────┤        │
-│  │ • Pie Chart      │              │ • XlsxWriter     │        │
-│  │ • Bar Charts (3) │              │ • Formatted      │        │
-│  │ • Scatter Plot   │              │ • All 12 fields  │        │
-│  │ • Histogram      │              │ • Download ready │        │
-│  └──────────────────┘              └──────────────────┘        │
-│                                                                  │
+│                    OUTPUT GENERATION                            │
+│                                                                 │
+│  ┌──────────────────┐              ┌──────────────────┐         │
+│  │  VISUALIZATIONS  │              │  EXCEL EXPORT    │         │
+│  ├──────────────────┤              ├──────────────────┤         │
+│  │ • Pie Chart      │              │ • XlsxWriter     │         │
+│  │ • Bar Charts (3) │              │ • Formatted      │         │
+│  │ • Scatter Plot   │              │ • All 12 fields  │         │
+│  │ • Histogram      │              │ • Download ready │         │
+│  └──────────────────┘              └──────────────────┘         │
+│                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -321,7 +321,7 @@ Designed intelligent **prompt engineering** that transforms user inputs into str
 
 ---
 
-### **Market Toggle & Excel Download**
+### **Toggle Switch & Pressure Sensor Excel Download**
 
 <div align="center">
 
@@ -640,10 +640,8 @@ This project demonstrates my ability to:
 
 ## 📄 Project Context
 
-Developed during Data Scientist internship at **TVS Sensing Solutions Private Limited, Madurai** - A leading manufacturer of advanced sensing technologies and electronic components under the TVS Group, specializing in pressure sensors, speed sensors, temperature sensors, and position sensors for automotive and industrial applications.
+Developed during Data Scientist internship at **TVS Sensing Solutions Private Limited, Madurai** - A leading manufacturer of advanced sensing technologies and electronic components under the TVS Sensing Solution Group, specializing in pressure sensors, speed sensors, temperature sensors, and position sensors for automotive and industrial applications.
 
-**Internship Duration:** December 16, 2024 - April 23, 2025  
-**Academic Program:** 5 Year Integrated M.Sc. (Data Science), Thiagarajar College of Engineering
 
 ---
 
@@ -661,7 +659,6 @@ Developed during Data Scientist internship at **TVS Sensing Solutions Private Li
 - **TVS Sensing Solutions Private Limited** - Internship opportunity and domain expertise
 - **Dr. M. S. Sabitha** (External Guide) - Technical guidance and project mentorship
 - **Dr. C. Mahadevi** (Internal Guide) - Academic supervision
-- **Thiagarajar College of Engineering** - Academic support and resources
 
 ---
 
