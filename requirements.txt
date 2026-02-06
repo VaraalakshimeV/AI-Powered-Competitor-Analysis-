@@ -5,38 +5,3 @@ ollama==0.6.2
 openpyxl
 XlsxWriter
 pytest
-```
-
-### 2. **.gitignore** (IMPORTANT)
-Prevent unnecessary files from being committed:
-```
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-env/
-venv/
-*.egg-info/
-dist/
-build/
-
-# Flask
-instance/
-.pytest_cache/
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Data files
-*.xlsx
-*.csv
-data/
-
-# OS
-.DS_Store
-Thumbs.db
